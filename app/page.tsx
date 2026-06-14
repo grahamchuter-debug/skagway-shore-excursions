@@ -24,8 +24,8 @@ export default function HomePage() {
       <Hero
         title="Skagway Shore Excursions for Cruise Passengers"
         subtitle="Historic White Pass Railway journeys, Yukon day trips, glacier helicopters, and Gold Rush adventures — with clear cruise confidence guidance for every port day."
-        image="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
-        imageAlt="White Pass Railway train with alpine mountains and glacier scenery near Skagway Alaska"
+        image="/hero-white-pass-railway.png"
+        imageAlt="The vintage White Pass and Yukon Route train with iconic red roofs winds through the steep, forested mountains of Skagway, Alaska"
         primaryCta={{ href: "/excursions/", label: cta.viewExcursions }}
         secondaryCta={{ href: "/one-day-in-skagway/", label: cta.planPortDay }}
       />

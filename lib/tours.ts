@@ -97,8 +97,8 @@ export const tours: Tour[] = [
       "Shorter duration makes this one of the easier options to pair with lunch in town. Still verify departure times against your ship's schedule — especially on late-arrival port days.",
     categories: ["white-pass-railway", "family-friendly"],
     priceFrom: 75,
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
-    imageAlt: "Historic Skagway Gold Rush town with wooden storefronts and mountain backdrop",
+    image: "/tours/skagway-city-and-white-pass-summit.png",
+    imageAlt: "Sunny view of historic Broadway Street in Skagway, Alaska, with colorful Gold Rush buildings, a cruise ship at the pier, and snow-capped mountains",
     highlights: [
       "Klondike Gold Rush downtown highlights",
       "White Pass Summit photo stops",
@@ -134,8 +134,8 @@ export const tours: Tour[] = [
       "Full-day Yukon tours require careful timing. Book the earliest available departure, carry your passport accessible for border stops, and avoid adding unrelated activities before or after without checking total elapsed time.",
     categories: ["yukon", "white-pass-railway"],
     priceFrom: 387,
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80",
-    imageAlt: "Yukon Territory alpine landscape with emerald lake and mountain peaks",
+    image: "/tours/yukon-rail-and-bus-adventure.png",
+    imageAlt: "Welcome to Yukon sign on a scenic mountain road marking the entrance to Yukon Territory on a Skagway rail and bus adventure",
     highlights: [
       "White Pass Railway segment",
       "Yukon Territory sightseeing",
