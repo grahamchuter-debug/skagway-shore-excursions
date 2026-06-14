@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --glacier-blue: #5b9cb8;
+  --glacier-light: #a8d4e6;
+  --forest-green: #1a3c34;
+  --forest-dark: #0f2822;
+  --mountain-grey: #4a5568;
+  --gold-rush: #c9a227;
+  --gold-light: #e8d48b;
+  --cream: #f7f5f0;
+  --background: #f7f5f0;
+  --foreground: #1a2e28;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-glacier: var(--glacier-blue);
+  --color-glacier-light: var(--glacier-light);
+  --color-forest: var(--forest-green);
+  --color-forest-dark: var(--forest-dark);
+  --color-mountain: var(--mountain-grey);
+  --color-gold: var(--gold-rush);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.gold-accent {
+  background: linear-gradient(135deg, var(--gold-rush), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.railway-stripe {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--forest-green) 0px,
+    var(--forest-green) 8px,
+    var(--gold-rush) 8px,
+    var(--gold-rush) 10px
+  );
+  height: 4px;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 40, 34, 0.55) 0%,
+    rgba(15, 40, 34, 0.75) 50%,
+    rgba(15, 40, 34, 0.92) 100%
+  );
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(26, 60, 52, 0.12);
+}
+
+.confidence-high {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.confidence-medium {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.confidence-plan {
+  background-color: #fee2e2;
+  color: #991b1b;
 }

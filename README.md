@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Skagway Shore Excursions
 
-## Getting Started
+Premium static website for **skagwayshoreexcursions.com** — Skagway, Alaska cruise shore excursions.
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router, static export)
+- Tailwind CSS v4
+- Deploy target: Cloudflare Pages
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Static output is written to `out/` — suitable for Cloudflare Pages.
 
-To learn more about Next.js, take a look at the following resources:
+## Cloudflare Pages Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Connect this repository in Cloudflare Pages
+2. Build command: `npm run build`
+3. Build output directory: `out`
+4. Node.js version: 20 or later
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Pages
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Home, Excursions, Port Guide, One Day in Skagway, FAQ
+- Category pages: White Pass Railway, Yukon, Dog Sledding, Helicopter, Private, Family-Friendly
+- 10 individual tour detail pages with Product/TouristTrip schema
