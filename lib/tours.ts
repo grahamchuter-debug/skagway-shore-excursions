@@ -172,8 +172,8 @@ export const tours: Tour[] = [
       "Mid-length format generally fits standard cruise windows well. Allow margin for border-area traffic and choose morning slots when your ship arrives early.",
     categories: ["yukon", "white-pass-railway", "family-friendly"],
     priceFrom: 349,
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80",
-    imageAlt: "Mountain canyon with suspension bridge over river in Yukon wilderness near Skagway",
+    image: "/tours/white-pass-summit-yukon-suspension-bridge.png",
+    imageAlt: "White Pass and Yukon Route railway trestle bridge over turquoise water with historic red buildings and mountain peaks near Carcross, Yukon",
     highlights: [
       "White Pass Railway ride",
       "Yukon Suspension Bridge crossing",
