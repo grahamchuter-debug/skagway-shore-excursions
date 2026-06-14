@@ -209,8 +209,8 @@ export const tours: Tour[] = [
       "At eight hours, this tour demands the most schedule attention. Confirm your ship's all-aboard time in writing, book the earliest departure, and skip independent plans that could delay your return to the pier.",
     categories: ["yukon"],
     priceFrom: 399,
-    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=1200&q=80",
-    imageAlt: "Klondike Highway waterfall and glacier scenery on Bennett scenic route from Skagway",
+    image: "/tours/bennett-scenic-journey.png",
+    imageAlt: "Lush green valley and dense coniferous forest leading to rugged mountain peaks on the Bennett Scenic Journey from Skagway",
     highlights: [
       "Klondike Highway waterfalls",
       "Glacial rivers and mountain vistas",
