@@ -8,8 +8,8 @@ export function WhitePassHighlight() {
       <div className="grid lg:grid-cols-2">
         <div className="relative min-h-[280px] lg:min-h-full">
           <Image
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
-            alt="White Pass and Yukon Route Railway train climbing through alpine mountains near Skagway Alaska"
+            src="/hero-white-pass-railway.png"
+            alt="White Pass & Yukon Route railway train with red roofs winding through forested mountains near Skagway, Alaska"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -76,8 +76,8 @@ export function YukonHighlight() {
         </div>
         <div className="relative order-1 min-h-[280px] lg:order-2 lg:min-h-full">
           <Image
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80"
-            alt="Emerald Lake and Yukon Territory mountain scenery on day trip from Skagway"
+            src="/tours/yukon-rail-and-bus-adventure.png"
+            alt="Welcome to Yukon Territory sign on the scenic corridor from Skagway shore excursions"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

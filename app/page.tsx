@@ -10,8 +10,16 @@ import { CategoryGrid } from "@/components/CategoryGrid";
 import { CTABanner } from "@/components/PageHeader";
 import { tours } from "@/lib/tours";
 import { cta } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, webpageSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
+import { createMetadata } from "@/lib/metadata";
+
+export const metadata = createMetadata({
+  title: "Skagway Shore Excursions | White Pass Railway & Yukon Tours",
+  description:
+    "Plan Skagway shore excursions for cruise passengers — White Pass Railway, Yukon day trips, and Gold Rush port-day options with clear return-to-ship guidance.",
+  path: "/",
+});
 
 export default function HomePage() {
   const featuredTours = tours.slice(0, 6);
@@ -19,7 +27,15 @@ export default function HomePage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([{ name: "Home", href: "/" }])}
+        data={[
+          breadcrumbSchema([{ name: "Home", href: "/" }]),
+          webpageSchema({
+            name: "Skagway Shore Excursions | White Pass Railway & Yukon Tours",
+            description:
+              "Plan Skagway shore excursions for cruise passengers — White Pass Railway, Yukon day trips, and Gold Rush port-day options with clear return-to-ship guidance.",
+            path: "/",
+          }),
+        ]}
       />
       <Hero
         title="Skagway Shore Excursions for Cruise Passengers"

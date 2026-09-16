@@ -25,7 +25,8 @@ export interface Tour {
   returnToShipAdvice: string;
   categories: TourCategory[];
   priceFrom: number;
-  image: string;
+  /** Verified local path, or null for neutral branded treatment (no stock mislabeling). */
+  image: string | null;
   imageAlt: string;
   highlights: string[];
   familyFriendly: boolean;
@@ -60,8 +61,9 @@ export const tours: Tour[] = [
       "This half-day format typically allows comfortable buffer time when booked on standard cruise schedules. Confirm your ship's all-aboard time and choose a morning departure when possible.",
     categories: ["white-pass-railway", "family-friendly"],
     priceFrom: 289,
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
-    imageAlt: "White Pass Railway train winding through snow-capped Alaskan mountains near Skagway",
+    image: "/hero-white-pass-railway.png",
+    imageAlt:
+      "White Pass & Yukon Route railway train with red roofs winding through forested mountains near Skagway, Alaska",
     highlights: [
       "Historic narrow-gauge railway to White Pass Summit",
       "Motorcoach return with Klondike Highway photo stops",
@@ -247,8 +249,8 @@ export const tours: Tour[] = [
       "Half-day length typically aligns well with cruise schedules. Morning departures leave room for downtown Skagway time after your tour.",
     categories: ["dog-sledding", "family-friendly"],
     priceFrom: 239,
-    image: "https://images.unsplash.com/photo-1605568420261-e9fae8e4b476?w=1200&q=80",
-    imageAlt: "Alaskan husky sled dog team with musher in alpine terrain near Skagway summit",
+    image: null,
+    imageAlt: "Skagway shore excursion planning — summit views and sled dog experiences",
     highlights: [
       "Summit viewpoint stops",
       "Musher-led kennel visit",
@@ -284,8 +286,8 @@ export const tours: Tour[] = [
       "Short total duration makes this among the easiest tours to combine with town exploration. Monitor weather briefings — rebooked flights can affect your buffer time.",
     categories: ["helicopter-glacier", "family-friendly"],
     priceFrom: 599,
-    image: "https://images.unsplash.com/photo-1483728642387-6a3fb52032a5?w=1200&q=80",
-    imageAlt: "Helicopter flying over glacier ice fields and mountains near Skagway Alaska",
+    image: null,
+    imageAlt: "Skagway shore excursion planning — helicopter glacier flightseeing options",
     highlights: [
       "Glacier flightseeing",
       "Coast Mountain panoramas",
@@ -321,8 +323,9 @@ export const tours: Tour[] = [
       "Self-paced does not mean unlimited time — respect the operator's return window. Build in buffer for border crossing and photography stops so you are not rushing the highway back to Skagway.",
     categories: ["yukon", "private"],
     priceFrom: 649,
-    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=80",
-    imageAlt: "Jeep driving Klondike Highway toward Emerald Lake in Yukon Territory from Skagway",
+    image: "/tours/yukon-rail-and-bus-adventure.png",
+    imageAlt:
+      "Welcome to Yukon Territory sign on the scenic highway corridor from Skagway — self-guided jeep travel context",
     highlights: [
       "Self-drive Klondike Highway",
       "Emerald Lake photo stop",
@@ -358,8 +361,8 @@ export const tours: Tour[] = [
       "Three-hour format leaves generous pier buffer on most cruise schedules. Still confirm whether your variant crosses into Canada and plan passport accordingly.",
     categories: ["family-friendly"],
     priceFrom: 85,
-    image: "https://images.unsplash.com/photo-1432407693418-8a62b063fd0f?w=1200&q=80",
-    imageAlt: "Scenic waterfall along Klondike Highway near Skagway Alaska",
+    image: null,
+    imageAlt: "Skagway shore excursion planning — scenic waterfall and Klondike Highway options",
     highlights: [
       "Multiple waterfall stops",
       "Klondike Highway scenery",
@@ -395,8 +398,8 @@ export const tours: Tour[] = [
       "Short duration fits easily into port days. Dress warmer than the air temperature suggests — fjord wind and spray are colder than downtown Skagway.",
     categories: ["family-friendly"],
     priceFrom: 229,
-    image: "https://images.unsplash.com/photo-1544551763-77a7c1e2d9e3?w=1200&q=80",
-    imageAlt: "Rigid inflatable boat cruising Skagway fjord with mountain coastline",
+    image: null,
+    imageAlt: "Skagway shore excursion planning — ocean raft and fjord shoreline options",
     highlights: [
       "Fjord shoreline exploration",
       "Custom RIB speed and agility",

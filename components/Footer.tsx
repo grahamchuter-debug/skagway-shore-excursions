@@ -79,6 +79,13 @@ export function Footer() {
         </div>
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/50">
           <p>
+            Planning questions:{" "}
+            <a href={`mailto:${siteConfig.email}`} className="text-gold-light hover:underline">
+              {siteConfig.email}
+            </a>
+            . We reply when we can — not a 24/7 desk.
+          </p>
+          <p className="mt-2">
             © {year} {siteConfig.name}. {siteConfig.domain} — Skagway, Alaska cruise
             shore excursions.
           </p>

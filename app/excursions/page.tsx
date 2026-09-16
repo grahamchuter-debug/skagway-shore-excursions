@@ -9,9 +9,9 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { cta } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "Skagway Shore Excursions & Tours",
+  title: "Best Skagway Shore Excursions | Compare White Pass & Yukon Tours",
   description:
-    "Browse all Skagway shore excursions — White Pass Railway, Yukon day trips, dog sledding, helicopter glaciers, and fjord adventures with cruise confidence guidance.",
+    "Compare Skagway shore excursions — White Pass Railway, Yukon rail and bus adventures, dog sledding, helicopters, and cruise-day planning guidance.",
   path: "/excursions/",
 });
 

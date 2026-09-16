@@ -5,9 +5,8 @@ export const siteConfig = {
   port: "Skagway, Alaska",
   tagline: "White Pass Railway, Yukon scenery & Gold Rush adventure",
   description:
-    "Premium Skagway shore excursions for cruise passengers. White Pass Railway tours, Yukon day trips, glacier helicopters, dog sledding, and family-friendly Alaska adventures with clear return-to-ship guidance.",
-  email: "info@skagwayshoreexcursions.com",
-  phone: "+1 (907) 555-0142",
+    "Independent Skagway shore excursion guide for cruise passengers — White Pass Railway, Yukon day trips, and Gold Rush adventures with clear return-to-ship planning guidance.",
+  email: "hello@skagwayshoreexcursions.com",
 } as const;
 
 export const navLinks = [

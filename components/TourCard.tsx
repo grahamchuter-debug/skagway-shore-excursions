@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Tour } from "@/lib/tours";
 import { formatPrice } from "@/lib/tours";
 import { CruiseConfidenceBadge } from "./CruiseConfidenceBadge";
+import { TourImage } from "./TourImage";
 
 interface TourCardProps {
   tour: Tour;
@@ -12,11 +12,9 @@ export function TourCard({ tour }: TourCardProps) {
   return (
     <article className="card-hover flex flex-col overflow-hidden rounded-xl border border-forest/10 bg-white shadow-sm">
       <Link href={`/tours/${tour.slug}/`} className="relative block aspect-[16/10]">
-        <Image
+        <TourImage
           src={tour.image}
           alt={tour.imageAlt}
-          fill
-          className="object-cover"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </Link>

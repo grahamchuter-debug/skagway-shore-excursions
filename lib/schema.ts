@@ -22,9 +22,10 @@ export function breadcrumbSchema(items: BreadcrumbItem[]) {
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "TravelAgency",
+    "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
+    email: siteConfig.email,
     description: siteConfig.description,
     areaServed: {
       "@type": "City",
@@ -36,9 +37,9 @@ export function organizationSchema() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      contactType: "customer service",
+      contactType: "customer enquiry",
       email: siteConfig.email,
-      telephone: siteConfig.phone,
+      url: `${siteConfig.url}/excursions/`,
     },
   };
 }
@@ -53,30 +54,26 @@ export function websiteSchema() {
   };
 }
 
-export function tourProductSchema(tour: Tour) {
+export function webpageSchema({
+  name,
+  description,
+  path,
+}: {
+  name: string;
+  description: string;
+  path: string;
+}) {
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: tour.name,
-    description: tour.description,
-    image: tour.image,
-    brand: {
-      "@type": "Brand",
+    "@type": "WebPage",
+    name,
+    description,
+    url: `${siteConfig.url}${path}`,
+    isPartOf: {
+      "@type": "WebSite",
       name: siteConfig.name,
+      url: siteConfig.url,
     },
-    offers: {
-      "@type": "Offer",
-      price: tour.priceFrom,
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      url: `${siteConfig.url}/tours/${tour.slug}/`,
-    },
-    category: "Skagway Shore Excursion",
-    additionalProperty: [
-      { "@type": "PropertyValue", name: "Duration", value: tour.duration },
-      { "@type": "PropertyValue", name: "Activity Level", value: tour.activityLevel },
-      { "@type": "PropertyValue", name: "Cruise Confidence", value: tour.cruiseConfidence },
-    ],
   };
 }
 
@@ -97,6 +94,7 @@ export function faqPageSchema(
   };
 }
 
+/** Editorial trip description — no price, Offer, or InStock. */
 export function touristTripSchema(tour: Tour) {
   return {
     "@context": "https://schema.org",
@@ -113,9 +111,10 @@ export function touristTripSchema(tour: Tour) {
       })),
     },
     provider: {
-      "@type": "TravelAgency",
+      "@type": "Organization",
       name: siteConfig.name,
       url: siteConfig.url,
+      email: siteConfig.email,
     },
   };
 }

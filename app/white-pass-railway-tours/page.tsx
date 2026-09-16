@@ -2,9 +2,9 @@ import { CategoryPageContent } from "@/components/CategoryPageContent";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "White Pass Railway Tours from Skagway",
+  title: "White Pass Railway Tours from Skagway | Shore Excursions",
   description:
-    "White Pass & Yukon Route Railway shore excursions from Skagway — summit rail journeys, bus combos, and Gold Rush scenery with cruise confidence guidance.",
+    "White Pass Railway tours from Skagway — summit rail and bus combos, Gold Rush scenery, and cruise confidence guidance for the White Pass & Yukon Route.",
   path: "/white-pass-railway-tours/",
 });
 
