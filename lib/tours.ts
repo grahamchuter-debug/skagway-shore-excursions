@@ -8,6 +8,9 @@ export type TourCategory =
   | "private"
   | "family-friendly";
 
+/** Group format. Set only once confirmed with the operator. */
+export type TourFormat = "Small group" | "Private" | "Shared group";
+
 export interface Tour {
   slug: string;
   name: string;
@@ -24,7 +27,11 @@ export interface Tour {
   whatToBring: string[];
   returnToShipAdvice: string;
   categories: TourCategory[];
+  /** Unverified planning figure in USD. Never displayed unless `priceVerifiedOn` is set. */
   priceFrom: number;
+  /** ISO date the price was last confirmed with the operator; null keeps "Price on enquiry". */
+  priceVerifiedOn: string | null;
+  format: TourFormat | null;
   /** Verified local path, or null for neutral branded treatment (no stock mislabeling). */
   image: string | null;
   imageAlt: string;
@@ -61,6 +68,8 @@ export const tours: Tour[] = [
       "This half-day format typically allows comfortable buffer time when booked on standard cruise schedules. Confirm your ship's all-aboard time and choose a morning departure when possible.",
     categories: ["white-pass-railway", "family-friendly"],
     priceFrom: 289,
+    priceVerifiedOn: null,
+    format: null,
     image: "/hero-white-pass-railway.png",
     imageAlt:
       "White Pass & Yukon Route railway train with red roofs winding through forested mountains near Skagway, Alaska",
@@ -99,6 +108,8 @@ export const tours: Tour[] = [
       "Shorter duration makes this one of the easier options to pair with lunch in town. Still verify departure times against your ship's schedule — especially on late-arrival port days.",
     categories: ["white-pass-railway", "family-friendly"],
     priceFrom: 75,
+    priceVerifiedOn: null,
+    format: null,
     image: "/tours/skagway-city-and-white-pass-summit.png",
     imageAlt: "Sunny view of historic Broadway Street in Skagway, Alaska, with colorful Gold Rush buildings, a cruise ship at the pier, and snow-capped mountains",
     highlights: [
@@ -136,6 +147,8 @@ export const tours: Tour[] = [
       "Full-day Yukon tours require careful timing. Book the earliest available departure, carry your passport accessible for border stops, and avoid adding unrelated activities before or after without checking total elapsed time.",
     categories: ["yukon", "white-pass-railway"],
     priceFrom: 387,
+    priceVerifiedOn: null,
+    format: null,
     image: "/tours/yukon-rail-and-bus-adventure.png",
     imageAlt: "Welcome to Yukon sign on a scenic mountain road marking the entrance to Yukon Territory on a Skagway rail and bus adventure",
     highlights: [
@@ -159,7 +172,7 @@ export const tours: Tour[] = [
     bestFor: ["Adventurous sightseers", "Bridge and canyon photography", "Rail plus extra wow-factor"],
     walkingRequired: "Easy walking on bridge and viewpoint platforms — steady footing recommended",
     foodDrink: "Not included",
-    cruiseConfidence: "High Cruise Confidence",
+    cruiseConfidence: "Medium Cruise Confidence",
     whoShouldChoose:
       "Great when you want more than summit photos but are not ready for a full Yukon day. The suspension bridge adds a memorable highlight without the longest border crossing itinerary.",
     whoShouldChooseDifferent:
@@ -174,8 +187,10 @@ export const tours: Tour[] = [
       "Mid-length format generally fits standard cruise windows well. Allow margin for border-area traffic and choose morning slots when your ship arrives early.",
     categories: ["yukon", "white-pass-railway", "family-friendly"],
     priceFrom: 349,
-    image: "/tours/white-pass-summit-yukon-suspension-bridge.png",
-    imageAlt: "White Pass and Yukon Route railway trestle bridge over turquoise water with historic red buildings and mountain peaks near Carcross, Yukon",
+    priceVerifiedOn: null,
+    format: null,
+    image: null,
+    imageAlt: "Skagway shore excursion planning — White Pass Summit and Yukon Suspension Bridge",
     highlights: [
       "White Pass Railway ride",
       "Yukon Suspension Bridge crossing",
@@ -211,6 +226,8 @@ export const tours: Tour[] = [
       "At eight hours, this tour demands the most schedule attention. Confirm your ship's all-aboard time in writing, book the earliest departure, and skip independent plans that could delay your return to the pier.",
     categories: ["yukon"],
     priceFrom: 399,
+    priceVerifiedOn: null,
+    format: null,
     image: "/tours/bennett-scenic-journey.png",
     imageAlt: "Lush green valley and dense coniferous forest leading to rugged mountain peaks on the Bennett Scenic Journey from Skagway",
     highlights: [
@@ -249,6 +266,8 @@ export const tours: Tour[] = [
       "Half-day length typically aligns well with cruise schedules. Morning departures leave room for downtown Skagway time after your tour.",
     categories: ["dog-sledding", "family-friendly"],
     priceFrom: 239,
+    priceVerifiedOn: null,
+    format: null,
     image: null,
     imageAlt: "Skagway shore excursion planning — summit views and sled dog experiences",
     highlights: [
@@ -268,7 +287,7 @@ export const tours: Tour[] = [
       "Soar above the Coast Mountains and Skagway ice fields on a glacier helicopter discovery flight. This is one of the most efficient ways to witness Alaska's glacial scale when your port day is limited but you want an unforgettable aerial perspective.",
     duration: "1 hour 30 minutes",
     activityLevel: "Easy",
-    bestFor: ["Bucket-list flyers", "Limited mobility travelers", "Time-efficient adventurers"],
+    bestFor: ["Bucket-list flyers", "Time-efficient adventurers", "Aerial photographers"],
     walkingRequired: "Minimal — short ground time if glacier landing is included in your variant",
     foodDrink: "Not included",
     cruiseConfidence: "High Cruise Confidence",
@@ -286,6 +305,8 @@ export const tours: Tour[] = [
       "Short total duration makes this among the easiest tours to combine with town exploration. Monitor weather briefings — rebooked flights can affect your buffer time.",
     categories: ["helicopter-glacier", "family-friendly"],
     priceFrom: 599,
+    priceVerifiedOn: null,
+    format: null,
     image: null,
     imageAlt: "Skagway shore excursion planning — helicopter glacier flightseeing options",
     highlights: [
@@ -323,6 +344,8 @@ export const tours: Tour[] = [
       "Self-paced does not mean unlimited time — respect the operator's return window. Build in buffer for border crossing and photography stops so you are not rushing the highway back to Skagway.",
     categories: ["yukon", "private"],
     priceFrom: 649,
+    priceVerifiedOn: null,
+    format: null,
     image: "/tours/yukon-rail-and-bus-adventure.png",
     imageAlt:
       "Welcome to Yukon Territory sign on the scenic highway corridor from Skagway — self-guided jeep travel context",
@@ -361,6 +384,8 @@ export const tours: Tour[] = [
       "Three-hour format leaves generous pier buffer on most cruise schedules. Still confirm whether your variant crosses into Canada and plan passport accordingly.",
     categories: ["family-friendly"],
     priceFrom: 85,
+    priceVerifiedOn: null,
+    format: null,
     image: null,
     imageAlt: "Skagway shore excursion planning — scenic waterfall and Klondike Highway options",
     highlights: [
@@ -398,6 +423,8 @@ export const tours: Tour[] = [
       "Short duration fits easily into port days. Dress warmer than the air temperature suggests — fjord wind and spray are colder than downtown Skagway.",
     categories: ["family-friendly"],
     priceFrom: 229,
+    priceVerifiedOn: null,
+    format: null,
     image: null,
     imageAlt: "Skagway shore excursion planning — ocean raft and fjord shoreline options",
     highlights: [
@@ -424,4 +451,17 @@ export function formatPrice(price: number): string {
     currency: "USD",
     minimumFractionDigits: 0,
   }).format(price);
+}
+
+export function verifiedPrice(tour: Tour): number | null {
+  return tour.priceVerifiedOn ? tour.priceFrom : null;
+}
+
+export function priceLabel(tour: Tour): string {
+  const price = verifiedPrice(tour);
+  return price === null ? "Price on enquiry" : `From ${formatPrice(price)}`;
+}
+
+export function tourOptions(): { slug: string; name: string }[] {
+  return tours.map((t) => ({ slug: t.slug, name: t.name }));
 }

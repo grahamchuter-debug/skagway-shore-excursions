@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { siteConfig, navLinks, categoryLinks, cta } from "@/lib/site";
+import { siteConfig, navLinks, categoryLinks, cta, enquireHref } from "@/lib/site";
+import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
   return (
@@ -7,7 +8,7 @@ export function Header() {
       <div className="railway-stripe" />
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex flex-col">
-          <span className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
+          <span className="font-display text-lg font-semibold tracking-tight sm:text-2xl">
             Skagway Shore Excursions
           </span>
           <span className="text-xs text-glacier-light/80 sm:text-sm">
@@ -28,18 +29,21 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/excursions/"
+            href={enquireHref()}
             className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-forest-dark transition hover:bg-gold-light"
           >
-            {cta.viewExcursions}
+            {cta.enquire}
           </Link>
         </nav>
-        <Link
-          href="/excursions/"
-          className="rounded-md bg-gold px-3 py-2 text-xs font-semibold text-forest-dark lg:hidden"
-        >
-          {cta.checkOptions}
-        </Link>
+        <div className="flex items-center gap-2 lg:hidden">
+          <Link
+            href={enquireHref()}
+            className="rounded-md bg-gold px-3 py-2 text-xs font-semibold text-forest-dark"
+          >
+            Enquire
+          </Link>
+          <MobileMenu />
+        </div>
       </div>
       <nav
         className="border-t border-white/10 lg:hidden"

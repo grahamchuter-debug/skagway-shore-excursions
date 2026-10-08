@@ -5,8 +5,25 @@ export const siteConfig = {
   port: "Skagway, Alaska",
   tagline: "White Pass Railway, Yukon scenery & Gold Rush adventure",
   description:
-    "Independent Skagway shore excursion guide for cruise passengers — White Pass Railway, Yukon day trips, and Gold Rush adventures with clear return-to-ship planning guidance.",
+    "Skagway shore excursions for cruise passengers from Wow A Tour — White Pass Railway, Yukon day trips, and Gold Rush adventures with clear return-to-ship planning guidance.",
   email: "hello@skagwayshoreexcursions.com",
+  parentBrand: "Wow A Tour",
+  /**
+   * Legal operator and data controller shown in the privacy policy.
+   * TODO(owner): confirm the exact Wow A Tour legal entity before the privacy policy goes live.
+   * While null, /privacy/ renders a visible "draft" notice.
+   */
+  legalOperator: null as string | null,
+} as const;
+
+export const enquiryConfig = {
+  /** Site identifier registered in the shared wowatour-enquiries service. */
+  siteId: "skagway",
+  endpoint:
+    process.env.NEXT_PUBLIC_ENQUIRY_ENDPOINT ??
+    "https://wowatour-enquiries.dark-violet-8d91.workers.dev/v1/enquiries",
+  /** Public Cloudflare Turnstile site key; when empty the form relies on the honeypot and fill-time checks. */
+  turnstileSiteKey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "",
 } as const;
 
 export const navLinks = [
@@ -15,6 +32,7 @@ export const navLinks = [
   { href: "/port-guide/", label: "Port Guide" },
   { href: "/one-day-in-skagway/", label: "One Day in Skagway" },
   { href: "/faq/", label: "FAQ" },
+  { href: "/about/", label: "About" },
 ] as const;
 
 export const categoryLinks = [
@@ -55,7 +73,16 @@ export const cta = {
   planPortDay: "Plan Your Skagway Port Day",
   compareTours: "Compare Skagway Tours",
   checkOptions: "Check Tour Options",
+  exploreExcursions: "Explore Shore Excursions",
+  enquire: "Enquire About a Tour",
+  enquireTour: "Enquire About This Tour",
+  enquireNow: "Enquire Now",
+  viewTour: "View Tour",
 } as const;
+
+export function enquireHref(tourSlug?: string): string {
+  return tourSlug ? `/enquire/?tour=${encodeURIComponent(tourSlug)}` : "/enquire/";
+}
 
 export type CruiseConfidence = "High Cruise Confidence" | "Medium Cruise Confidence" | "Plan Carefully";
 

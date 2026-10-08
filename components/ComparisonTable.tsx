@@ -9,8 +9,8 @@ export function ComparisonTable() {
         Which Skagway Excursion Is Right for You?
       </h2>
       <p className="mt-2 max-w-2xl text-mountain">
-        Compare duration, activity level, and cruise confidence across our most
-        popular Skagway shore excursions.
+        Compare duration, activity level, and cruise confidence across the Skagway
+        shore excursions on this site.
       </p>
       <div className="mt-6 overflow-x-auto rounded-xl border border-forest/10 bg-white shadow-sm">
         <table className="w-full min-w-[720px] text-left text-sm">
@@ -54,7 +54,8 @@ export function ComparisonTable() {
         <Link href="/excursions/" className="font-semibold text-glacier hover:text-forest">
           {cta.compareTours}
         </Link>{" "}
-        — view full details, pricing, and booking guidance for each excursion.
+        — view full details and return-to-ship advice for each excursion, then
+        enquire for current pricing.
       </p>
     </section>
   );

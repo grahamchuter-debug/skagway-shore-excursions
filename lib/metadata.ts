@@ -5,10 +5,12 @@ export function createMetadata({
   title,
   description,
   path = "",
+  noindex = false,
 }: {
   title: string;
   description: string;
   path?: string;
+  noindex?: boolean;
 }): Metadata {
   const fullTitle = title.includes(siteConfig.name)
     ? title
@@ -35,7 +37,7 @@ export function createMetadata({
       description,
     },
     robots: {
-      index: true,
+      index: !noindex,
       follow: true,
     },
   };

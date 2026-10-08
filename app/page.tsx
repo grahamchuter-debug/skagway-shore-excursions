@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
+import { ReassuranceStrip } from "@/components/ReassuranceStrip";
 import { TourCard } from "@/components/TourCard";
 import { CruisePassengerSnapshot } from "@/components/CruisePassengerSnapshot";
 import { CruiseConfidenceSection } from "@/components/CruiseConfidenceSection";
@@ -9,7 +10,7 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 import { CategoryGrid } from "@/components/CategoryGrid";
 import { CTABanner } from "@/components/PageHeader";
 import { tours } from "@/lib/tours";
-import { cta } from "@/lib/site";
+import { cta, enquireHref } from "@/lib/site";
 import { breadcrumbSchema, webpageSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
 import { createMetadata } from "@/lib/metadata";
@@ -38,13 +39,15 @@ export default function HomePage() {
         ]}
       />
       <Hero
-        title="Skagway Shore Excursions for Cruise Passengers"
-        subtitle="Historic White Pass Railway journeys, Yukon day trips, glacier helicopters, and Gold Rush adventures — with clear cruise confidence guidance for every port day."
+        eyebrow="Skagway Shore Excursions"
+        title="Explore Skagway Beyond the Cruise Ship"
+        subtitle="Discover carefully selected Skagway shore excursions, from the legendary White Pass Railway to scenic small-group adventures. Designed around your time in port."
         image="/hero-white-pass-railway.png"
         imageAlt="The vintage White Pass and Yukon Route train with iconic red roofs winds through the steep, forested mountains of Skagway, Alaska"
-        primaryCta={{ href: "/excursions/", label: cta.viewExcursions }}
-        secondaryCta={{ href: "/one-day-in-skagway/", label: cta.planPortDay }}
+        primaryCta={{ href: "/excursions/", label: cta.exploreExcursions }}
+        secondaryCta={{ href: enquireHref(), label: cta.enquire }}
       />
+      <ReassuranceStrip />
 
       <div className="mx-auto max-w-7xl space-y-16 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <CruisePassengerSnapshot />
@@ -95,8 +98,9 @@ export default function HomePage() {
 
         <CTABanner
           title="Ready to Plan Your Skagway Port Day?"
-          description="Compare tours, review cruise confidence ratings, and find the right Alaska adventure for your ship schedule."
-          buttonLabel={cta.compareTours}
+          description="Tell us your ship, arrival date, and the tours you're considering. We'll reply by email with suitable options, timing, and current pricing."
+          href={enquireHref()}
+          buttonLabel={cta.enquire}
         />
       </div>
     </>

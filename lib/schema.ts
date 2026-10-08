@@ -94,7 +94,10 @@ export function faqPageSchema(
   };
 }
 
-/** Editorial trip description — no price, Offer, or InStock. */
+/**
+ * Editorial trip description — no price, Offer, or InStock. No `provider`:
+ * the tours are operated by local suppliers, not by this site.
+ */
 export function touristTripSchema(tour: Tour) {
   return {
     "@context": "https://schema.org",
@@ -109,12 +112,6 @@ export function touristTripSchema(tour: Tour) {
         position: i + 1,
         name: h,
       })),
-    },
-    provider: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      email: siteConfig.email,
     },
   };
 }

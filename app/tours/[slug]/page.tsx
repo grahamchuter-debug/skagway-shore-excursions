@@ -6,14 +6,14 @@ import { JsonLd } from "@/components/JsonLd";
 import { CTABanner } from "@/components/PageHeader";
 import { CruiseConfidenceBadge } from "@/components/CruiseConfidenceBadge";
 import { TourImage } from "@/components/TourImage";
-import { tours, getTourBySlug, formatPrice } from "@/lib/tours";
+import { tours, getTourBySlug, priceLabel } from "@/lib/tours";
 import { createMetadata } from "@/lib/metadata";
 import {
   breadcrumbSchema,
   touristTripSchema,
   webpageSchema,
 } from "@/lib/schema";
-import { cta } from "@/lib/site";
+import { cta, enquireHref, siteConfig } from "@/lib/site";
 
 interface TourPageProps {
   params: Promise<{ slug: string }>;
@@ -115,15 +115,26 @@ export default async function TourPage({ params }: TourPageProps) {
 
         <aside className="lg:col-span-2">
           <div className="sticky top-24 rounded-xl border border-forest/10 bg-white p-6 shadow-sm">
-            <p className="text-sm text-mountain">From</p>
-            <p className="font-display text-3xl font-bold text-forest">
-              {formatPrice(tour.priceFrom)}
+            <p className="font-display text-2xl font-bold text-forest">
+              {priceLabel(tour)}
             </p>
-            <p className="mt-2 text-xs text-mountain">
-              Indicative starting price for planning — enquire for current operator rates. No online checkout.
+            {tour.priceVerifiedOn && (
+              <p className="mt-1 text-xs text-mountain">
+                Price checked {tour.priceVerifiedOn}. Final price confirmed by email.
+              </p>
+            )}
+            <p className="mt-2 text-sm text-mountain">
+              This tour isn&apos;t bookable online. Send an enquiry with your ship and
+              arrival date and we&apos;ll reply by email with options, timing, and
+              current pricing.
             </p>
-            <div className="mt-4">
+            <div className="mt-4 flex flex-wrap gap-2">
               <CruiseConfidenceBadge level={tour.cruiseConfidence} />
+              {tour.format && (
+                <span className="inline-flex rounded-full border border-forest/15 px-3 py-1 text-xs font-semibold text-forest">
+                  {tour.format}
+                </span>
+              )}
             </div>
             <dl className="mt-6 space-y-3 text-sm">
               <div className="flex justify-between border-b border-forest/5 pb-2">
@@ -141,18 +152,27 @@ export default async function TourPage({ params }: TourPageProps) {
                 </dd>
               </div>
             </dl>
-            <a
-              href={`mailto:hello@skagwayshoreexcursions.com?subject=${encodeURIComponent(`Enquiry: ${tour.name}`)}`}
+            <Link
+              href={enquireHref(tour.slug)}
               className="mt-6 block w-full rounded-md bg-gold py-3 text-center text-sm font-semibold text-forest-dark hover:bg-gold-light"
             >
-              Enquire by email
-            </a>
+              {cta.enquireTour}
+            </Link>
             <Link
               href="/excursions/"
               className="mt-3 block w-full rounded-md border border-forest/20 py-3 text-center text-sm font-semibold text-forest hover:bg-cream"
             >
               {cta.compareTours}
             </Link>
+            <p className="mt-4 text-xs text-mountain">
+              Prefer email?{" "}
+              <a
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(`Enquiry: ${tour.name}`)}`}
+                className="font-medium text-glacier underline hover:text-forest"
+              >
+                {siteConfig.email}
+              </a>
+            </p>
           </div>
         </aside>
       </div>

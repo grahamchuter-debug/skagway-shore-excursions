@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Tour } from "@/lib/tours";
-import { formatPrice } from "@/lib/tours";
+import { priceLabel } from "@/lib/tours";
+import { cta, enquireHref } from "@/lib/site";
 import { CruiseConfidenceBadge } from "./CruiseConfidenceBadge";
 import { TourImage } from "./TourImage";
 
@@ -19,21 +20,20 @@ export function TourCard({ tour }: TourCardProps) {
         />
       </Link>
       <div className="flex flex-1 flex-col p-5">
-        <div className="mb-2 flex items-start justify-between gap-2">
+        <div className="mb-2 flex flex-wrap items-center gap-2">
           <CruiseConfidenceBadge level={tour.cruiseConfidence} />
-          <span className="text-sm font-semibold text-forest">
-            From {formatPrice(tour.priceFrom)}
-          </span>
+          {tour.format && (
+            <span className="inline-flex rounded-full border border-forest/15 px-3 py-1 text-xs font-semibold text-forest">
+              {tour.format}
+            </span>
+          )}
         </div>
         <h3 className="font-display text-lg font-semibold text-forest">
           <Link href={`/tours/${tour.slug}/`} className="hover:text-glacier">
             {tour.name}
           </Link>
         </h3>
-        <p className="mt-2 flex-1 text-sm text-mountain leading-relaxed">
-          {tour.shortDescription}
-        </p>
-        <dl className="mt-4 grid grid-cols-2 gap-2 text-xs text-mountain">
+        <dl className="mt-3 grid grid-cols-2 gap-2 text-xs text-mountain">
           <div>
             <dt className="font-semibold text-forest">Duration</dt>
             <dd>{tour.duration}</dd>
@@ -43,12 +43,33 @@ export function TourCard({ tour }: TourCardProps) {
             <dd>{tour.activityLevel}</dd>
           </div>
         </dl>
-        <Link
-          href={`/tours/${tour.slug}/`}
-          className="mt-4 text-sm font-semibold text-glacier hover:text-forest"
-        >
-          Check Tour Options →
-        </Link>
+        <ul className="mt-4 flex-1 space-y-1.5 text-sm text-mountain">
+          {tour.highlights.slice(0, 3).map((h) => (
+            <li key={h} className="flex gap-2">
+              <span aria-hidden="true" className="text-gold">
+                ✦
+              </span>
+              {h}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-sm font-semibold text-forest">{priceLabel(tour)}</p>
+        <div className="mt-4 grid grid-cols-2 gap-3">
+          <Link
+            href={`/tours/${tour.slug}/`}
+            className="rounded-md border border-forest/20 px-3 py-2.5 text-center text-sm font-semibold text-forest hover:bg-cream"
+            aria-label={`${cta.viewTour}: ${tour.name}`}
+          >
+            {cta.viewTour}
+          </Link>
+          <Link
+            href={enquireHref(tour.slug)}
+            className="rounded-md bg-gold px-3 py-2.5 text-center text-sm font-semibold text-forest-dark hover:bg-gold-light"
+            aria-label={`${cta.enquireNow}: ${tour.name}`}
+          >
+            {cta.enquireNow}
+          </Link>
+        </div>
       </div>
     </article>
   );

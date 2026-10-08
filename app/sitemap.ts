@@ -10,6 +10,9 @@ const staticPages = [
   "one-day-in-skagway/",
   "faq/",
   ...categoryLinks.map((c) => c.href.replace(/^\//, "")),
+  "about/",
+  "enquire/",
+  "partners/",
 ];
 
 export const dynamic = "force-static";

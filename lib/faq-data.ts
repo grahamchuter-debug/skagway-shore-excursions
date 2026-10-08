@@ -30,9 +30,14 @@ export const faqs = [
       "Yes. Family-friendly options include city-and-summit tours, summit sled dog experiences, helicopter flightseeing, scenic waterfall drives, and gentle fjord raft adventures. Match activity level and duration to younger travelers' stamina.",
   },
   {
+    question: "How do I book or enquire about a Skagway tour?",
+    answer:
+      "Tours on this site aren't bookable online. Send an enquiry with your cruise ship, arrival date, and number of passengers, and we'll reply by email with suitable options, timing, and current pricing. Sending an enquiry doesn't commit you to a booking.",
+  },
+  {
     question: "How early should I book Skagway tours?",
     answer:
-      "Book as early as your cruise allows — especially for White Pass Railway seats, helicopter flights, and peak-season Yukon departures. Popular sailings can sell out weeks ahead.",
+      "Enquire as early as your cruise allows — especially for White Pass Railway seats, helicopter flights, and peak-season Yukon departures. Popular sailings can sell out weeks ahead.",
   },
   {
     question: "What should I wear on a Skagway port day?",

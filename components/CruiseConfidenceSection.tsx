@@ -6,8 +6,8 @@ export function CruiseConfidenceSection() {
       level: "High Cruise Confidence",
       className: "confidence-high",
       description:
-        "Shorter formats (typically under 4 hours) that generally align well with standard cruise schedules. Still confirm your all-aboard time.",
-      examples: "Helicopter discovery, city & summit, ocean raft, waterfall tours",
+        "Half-day formats (typically 4½ hours or less) without a Canadian border crossing that generally align well with standard cruise schedules. Still confirm your all-aboard time.",
+      examples: "Helicopter discovery, city & summit, White Pass rail & bus, sled dogs, ocean raft, waterfall tours",
     },
     {
       level: "Medium Cruise Confidence",

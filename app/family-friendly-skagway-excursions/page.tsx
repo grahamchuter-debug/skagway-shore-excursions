@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "Family-Friendly Skagway Excursions",
   description:
-    "Family-friendly Skagway shore excursions for all ages — easy activity levels, sled dogs, waterfalls, rail tours, and fjord adventures with High Cruise Confidence.",
+    "Family-friendly Skagway shore excursions for all ages — easy activity levels, sled dogs, waterfalls, rail tours, and fjord adventures with cruise confidence guidance.",
   path: "/family-friendly-skagway-excursions/",
 });
 
