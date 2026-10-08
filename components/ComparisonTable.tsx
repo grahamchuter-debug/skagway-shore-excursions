@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { tours } from "@/lib/tours";
 import { cta } from "@/lib/site";
+import { TRAVEL_DOCS_HREF } from "@/lib/travel-documents";
 
 export function ComparisonTable() {
   return (
@@ -9,8 +10,12 @@ export function ComparisonTable() {
         Which Skagway Excursion Is Right for You?
       </h2>
       <p className="mt-2 max-w-2xl text-mountain">
-        Compare duration, activity level, and cruise confidence across the Skagway
-        shore excursions on this site.
+        Compare duration, activity level, cruise confidence, and border crossings
+        across the Skagway shore excursions on this site.{" "}
+        <Link href={TRAVEL_DOCS_HREF} className="font-medium text-glacier hover:text-forest">
+          Check which documents you need
+        </Link>{" "}
+        for tours that cross into Canada.
       </p>
       <div className="mt-6 overflow-x-auto rounded-xl border border-forest/10 bg-white shadow-sm">
         <table className="w-full min-w-[720px] text-left text-sm">
@@ -21,6 +26,7 @@ export function ComparisonTable() {
               <th className="px-4 py-3 font-semibold text-forest">Activity</th>
               <th className="px-4 py-3 font-semibold text-forest">Best For</th>
               <th className="px-4 py-3 font-semibold text-forest">Confidence</th>
+              <th className="px-4 py-3 font-semibold text-forest">Canada?</th>
             </tr>
           </thead>
           <tbody>
@@ -44,6 +50,9 @@ export function ComparisonTable() {
                   <span className="text-xs font-medium text-forest">
                     {tour.cruiseConfidence.replace(" Cruise Confidence", "")}
                   </span>
+                </td>
+                <td className="px-4 py-3 text-mountain">
+                  {{ yes: "Yes", most: "Most versions", no: "No" }[tour.crossesIntoCanada]}
                 </td>
               </tr>
             ))}

@@ -1,13 +1,16 @@
-export const faqs = [
+import { TRAVEL_DOCS_HREF } from "./travel-documents";
+
+export const faqs: { question: string; answer: string; link?: { href: string; label: string } }[] = [
   {
     question: "What makes Skagway special for cruise passengers?",
     answer:
-      "Skagway combines Klondike Gold Rush history, the iconic White Pass & Yukon Route Railway, and easy access to Yukon Territory scenery. Most downtown attractions sit within walking distance of the cruise pier, making it one of Alaska's most compact yet dramatic port days.",
+      "Skagway combines Klondike Gold Rush history, the iconic White Pass & Yukon Route Railway, and easy access to Yukon Territory scenery. Downtown is a short walk from the cruise docks, so it's easy to combine a tour with time in town.",
   },
   {
     question: "Do I need a passport for Skagway shore excursions?",
     answer:
-      "Most tours from Skagway cross into Canada — including White Pass rail-and-bus combinations, summit and waterfall drives, sled dog camps beyond the summit, the suspension bridge, and Yukon day trips — so plan on a valid passport for every traveler. A rail-only White Pass Summit round trip that turns back at the summit doesn't enter Canada. Operators often require original passports for everyone 16 and over, and non-U.S. citizens should check Canada's entry rules and make sure they can re-enter the U.S. Confirm document requirements when you enquire.",
+      "Most tours from Skagway cross into Canada and back — including White Pass rail-and-bus combinations, summit and waterfall drives, most sled dog camps, the suspension bridge, and Yukon day trips — so every traveller needs accepted border documents. A passport is the simplest choice. U.S. adults can also return by land with a passport card, enhanced driver's license, or NEXUS card, and U.S. and Canadian children under 16 with a birth certificate. Other nationalities need a passport, may need a Canadian visitor visa, and must be able to re-enter the U.S. Some tour operators require a passport whatever your citizenship — we'll confirm the requirement for your chosen tour when you enquire. Helicopter glacier and ocean raft tours stay in Alaska.",
+    link: { href: TRAVEL_DOCS_HREF, label: "Full travel documents guide, with official sources" },
   },
   {
     question: "What does High Cruise Confidence mean?",
@@ -37,7 +40,7 @@ export const faqs = [
   {
     question: "How early should I book Skagway tours?",
     answer:
-      "Enquire as early as your cruise allows — especially for White Pass Railway seats, helicopter flights, and peak-season Yukon departures. Popular sailings can sell out weeks ahead.",
+      "Enquire as early as your cruise plans allow, so there's time to check options, timing, and border documents before your port day. We confirm availability for your date when we reply.",
   },
   {
     question: "What should I wear on a Skagway port day?",

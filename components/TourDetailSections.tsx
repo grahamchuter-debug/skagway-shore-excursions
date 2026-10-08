@@ -1,4 +1,7 @@
+import Link from "next/link";
 import type { Tour } from "@/lib/tours";
+import { borderNote } from "@/lib/tours";
+import { operatorPassportNote, TRAVEL_DOCS_HREF } from "@/lib/travel-documents";
 import { CruiseConfidenceBadge } from "./CruiseConfidenceBadge";
 
 interface TourDetailSectionsProps {
@@ -22,6 +25,42 @@ export function TourDetailSections({ tour }: TourDetailSectionsProps) {
     {
       title: "Walking Required",
       content: tour.walkingRequired,
+    },
+    ...(tour.requirements.length
+      ? [
+          {
+            title: "Requirements & Restrictions",
+            content: (
+              <>
+                <ul className="list-disc pl-5 space-y-1">
+                  {tour.requirements.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <p className="mt-2 text-sm">
+                  Typical rules — they vary by operator and are confirmed when you enquire.
+                </p>
+              </>
+            ),
+          },
+        ]
+      : []),
+    {
+      title: "Border Crossing",
+      content: (
+        <>
+          <p>{borderNote(tour)}</p>
+          {tour.crossesIntoCanada !== "no" && (
+            <p className="mt-2">
+              {operatorPassportNote}{" "}
+              <Link href={TRAVEL_DOCS_HREF} className="font-medium text-glacier underline hover:text-forest">
+                Which documents you need
+              </Link>
+              .
+            </p>
+          )}
+        </>
+      ),
     },
     {
       title: "Food & Drink",

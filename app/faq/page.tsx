@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageHeader, CTABanner } from "@/components/PageHeader";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -50,6 +51,13 @@ export default function FAQPage() {
             </summary>
             <div className="border-t border-forest/5 px-6 py-4 text-mountain leading-relaxed">
               {faq.answer}
+              {faq.link && (
+                <p className="mt-3">
+                  <Link href={faq.link.href} className="font-medium text-glacier underline hover:text-forest">
+                    {faq.link.label}
+                  </Link>
+                </p>
+              )}
             </div>
           </details>
         ))}

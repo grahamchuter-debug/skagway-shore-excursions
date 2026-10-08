@@ -62,7 +62,7 @@ export function YukonHighlight() {
             Columbia, and the high mountain scenery of the Klondike Highway.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-mountain">
-            <li>• Valid passport required</li>
+            <li>• Border documents needed — a passport is simplest</li>
             <li>• Emerald Lake and Klondike Highway vistas</li>
             <li>• Medium Cruise Confidence — plan morning departures</li>
           </ul>

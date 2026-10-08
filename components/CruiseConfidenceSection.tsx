@@ -13,7 +13,7 @@ export function CruiseConfidenceSection() {
       level: "Medium Cruise Confidence",
       className: "confidence-medium",
       description:
-        "Longer half-day (around 4–5 hours) or full-day tours that go further into Canada, or self-drive. Choose morning departures and carry your passport.",
+        "Longer half-day (around 4–5 hours) or full-day tours that go further into Canada, or self-drive. Choose morning departures and carry your border documents.",
       examples: "Summit & sled dogs, suspension bridge rail combo, Yukon rail & bus, Jeep to Yukon",
     },
     {
@@ -21,7 +21,7 @@ export function CruiseConfidenceSection() {
       className: "confidence-plan",
       description:
         "Extended itineraries approaching a full port day. Best for ships with long Skagway calls and early tour starts.",
-      examples: "Bennett Scenic Journey, 8-hour Klondike Highway odysseys",
+      examples: "Full-day rail journey to Bennett and Carcross (about 8 hours)",
     },
   ];
 
@@ -57,8 +57,8 @@ export function CruiseConfidenceSection() {
         ))}
       </div>
       <p className="mt-6 text-sm text-white/60">
-        Tip: Book morning departures, keep your passport accessible — most tours
-        from Skagway cross into Canada — and leave buffer time before all-aboard — especially on full-day
+        Tip: Book morning departures, keep your border documents handy — most tours
+        from Skagway cross into Canada — and leave buffer time before all-aboard, especially on full-day
         adventures. {cta.compareTours} on our excursions page.
       </p>
     </section>

@@ -19,7 +19,10 @@ export default function HelicopterPage() {
         <section className="mb-8 rounded-xl bg-cream border border-forest/10 p-6">
           <p className="text-mountain leading-relaxed">
             Helicopter tours are weather-dependent. If your flight is rescheduled,
-            monitor how the new time affects your all-aboard buffer. Dress warmer
+            monitor how the new time affects your all-aboard buffer. Expect high
+            helicopter steps and a short walk over uneven glacier ice; weight
+            surcharges typically apply from about 250 lb, and medical and pregnancy
+            guidance varies by operator — confirmed when you enquire. Dress warmer
             than downtown Skagway suggests — alpine air at altitude is chilly.
           </p>
         </section>

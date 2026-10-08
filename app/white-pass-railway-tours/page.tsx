@@ -12,7 +12,7 @@ export default function WhitePassRailwayPage() {
   return (
     <CategoryPageContent
       title="White Pass Railway Tours"
-      description="Ride the historic White Pass & Yukon Route narrow-gauge railway — the defining Skagway experience. These tours climb from sea level to the summit pass stampeders crossed during the Klondike Gold Rush, with options to combine rail with motorcoach returns and Yukon extensions."
+      description="Ride the historic White Pass & Yukon Route narrow-gauge railway — Skagway's classic excursion. These tours climb from sea level to the summit pass stampeders crossed during the Klondike Gold Rush, with options to combine rail with motorcoach returns and Yukon extensions."
       path="/white-pass-railway-tours/"
       category="white-pass-railway"
       extraContent={

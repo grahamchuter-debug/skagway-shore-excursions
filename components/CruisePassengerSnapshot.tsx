@@ -2,7 +2,7 @@ export function CruisePassengerSnapshot() {
   const stats = [
     { label: "Typical port time", value: "6–10 hours" },
     { label: "Pier to Broadway", value: "Short walk (varies by dock)" },
-    { label: "Passport needed", value: "For most tours" },
+    { label: "Border documents", value: "Needed for most tours" },
     { label: "Peak season", value: "May – September" },
   ];
 

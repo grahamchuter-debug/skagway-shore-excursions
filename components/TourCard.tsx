@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Tour } from "@/lib/tours";
-import { priceLabel } from "@/lib/tours";
+import { borderLabel, priceLabel } from "@/lib/tours";
 import { cta, enquireHref } from "@/lib/site";
 import { CruiseConfidenceBadge } from "./CruiseConfidenceBadge";
 import { TourImage } from "./TourImage";
@@ -41,6 +41,10 @@ export function TourCard({ tour }: TourCardProps) {
           <div>
             <dt className="font-semibold text-forest">Activity</dt>
             <dd>{tour.activityLevel}</dd>
+          </div>
+          <div className="col-span-2">
+            <dt className="font-semibold text-forest">Border</dt>
+            <dd>{borderLabel[tour.crossesIntoCanada]}</dd>
           </div>
         </dl>
         <ul className="mt-4 flex-1 space-y-1.5 text-sm text-mountain">

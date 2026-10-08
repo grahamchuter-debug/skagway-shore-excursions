@@ -38,8 +38,8 @@ const itineraries = [
     title: "Full Port Day (8+ hours)",
     confidence: "Medium Cruise Confidence for Yukon",
     steps: [
-      "Depart on earliest Yukon rail-and-bus or Bennett Scenic Journey",
-      "Carry passport — border crossing is part of the adventure",
+      "Take the earliest Yukon rail-and-bus or full-day rail journey to Bennett and Carcross",
+      "Bring border documents for everyone — check our travel documents guide first",
       "Minimal extra activities; build buffer before ship all-aboard",
     ],
     tourLink: "/yukon-tours-from-skagway/",

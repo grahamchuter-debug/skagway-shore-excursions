@@ -59,8 +59,8 @@ export default function HomePage() {
                 Featured Skagway Shore Excursions
               </h2>
               <p className="mt-2 max-w-xl text-mountain">
-                From the legendary White Pass train to Yukon suspension bridges and
-                helicopter glacier flightseeing.
+                From the legendary White Pass train to the Yukon Suspension Bridge and
+                helicopter glacier landings.
               </p>
             </div>
             <Link

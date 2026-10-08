@@ -8,6 +8,8 @@ export type TourCategory =
   | "private"
   | "family-friendly";
 
+export type BorderCrossing = "yes" | "most" | "no";
+
 /** Group format. Set only once confirmed with the operator. */
 export type TourFormat = "Small group" | "Private" | "Shared group";
 
@@ -38,6 +40,10 @@ export interface Tour {
   highlights: string[];
   familyFriendly: boolean;
   privateOption: boolean;
+  /** Whether typical versions of this tour cross into Canada and back. */
+  crossesIntoCanada: BorderCrossing;
+  /** Typical operator rules (age, weight, health, driver). Indicative only — confirmed when enquiring. */
+  requirements: string[];
 }
 
 export const tours: Tour[] = [
@@ -47,11 +53,11 @@ export const tours: Tour[] = [
     shortDescription:
       "Ride the White Pass & Yukon Route railway over the summit, then return to Skagway by road on the Klondike Highway.",
     description:
-      "Ride the historic White Pass & Yukon Route narrow-gauge railway over White Pass Summit, tracing the path of Klondike Gold Rush stampeders. Typical versions continue by train to Fraser, British Columbia, where you clear Canadian customs, then return to Skagway by motorcoach on the Klondike Highway with photo stops you would miss on rail alone. Some departures run in reverse, bus first.",
+      "Ride the historic White Pass & Yukon Route narrow-gauge railway over White Pass Summit, tracing the path of Klondike Gold Rush stampeders. On most versions the train continues to Fraser, British Columbia, where you clear Canadian customs, then you return to Skagway by motorcoach on the Klondike Highway with photo stops you would miss on rail alone. Some departures run in reverse — bus up, train back — and the direction is confirmed when you enquire.",
     duration: "3 hours 30 minutes",
     activityLevel: "Easy",
     bestFor: ["First-time Alaska visitors", "Railway enthusiasts", "Photographers"],
-    walkingRequired: "Minimal — short photo stops with optional light walking. Trains and tour vehicles are generally not wheelchair accessible; confirm when enquiring.",
+    walkingRequired: "Minimal — short photo stops with optional light walking.",
     foodDrink: "Not included — bring snacks or plan time in town before/after",
     cruiseConfidence: "High Cruise Confidence",
     whoShouldChoose:
@@ -59,7 +65,7 @@ export const tours: Tour[] = [
     whoShouldChooseDifferent:
       "Choose a Yukon day trip if you want to go further into Canada and see Emerald Lake. Choose helicopter flightseeing if rail scenery is not your priority and you prefer aerial glacier views.",
     whatToBring: [
-      "Passport (required — this route enters Canada at Fraser, BC)",
+      "Passport or other accepted border documents for every traveller (see Border Crossing below)",
       "Layered clothing and rain jacket",
       "Camera with extra batteries",
       "Binoculars for wildlife spotting",
@@ -75,11 +81,15 @@ export const tours: Tour[] = [
       "White Pass & Yukon Route railway train with red roofs winding through forested mountains near Skagway, Alaska",
     highlights: [
       "Historic narrow-gauge railway over White Pass Summit",
-      "Motorcoach return with Klondike Highway photo stops",
+      "Klondike Highway motorcoach leg with photo stops (direction varies)",
       "Klondike Gold Rush history along the route",
     ],
     familyFriendly: true,
     privateOption: false,
+    crossesIntoCanada: "yes",
+    requirements: [
+      "Trains and tour vehicles are generally not wheelchair accessible",
+    ],
   },
   {
     slug: "skagway-city-and-white-pass-summit",
@@ -102,7 +112,7 @@ export const tours: Tour[] = [
       "Comfortable walking shoes",
       "Light rain layer",
       "Sun protection",
-      "Passport (required on most versions — the route crosses into Canada)",
+      "Passport or other accepted border documents for every traveller (see Border Crossing below)",
     ],
     returnToShipAdvice:
       "Shorter duration makes this one of the easier options to pair with lunch in town. Allow for border checks and verify departure times against your ship's schedule — especially on late-arrival port days.",
@@ -119,6 +129,8 @@ export const tours: Tour[] = [
     ],
     familyFriendly: true,
     privateOption: false,
+    crossesIntoCanada: "most",
+    requirements: [],
   },
   {
     slug: "yukon-rail-and-bus-adventure",
@@ -126,7 +138,7 @@ export const tours: Tour[] = [
     shortDescription:
       "Full-day journey into Canada's Yukon by rail and motorcoach, typically with lunch included.",
     description:
-      "Combine the White Pass & Yukon Route railway with a motorcoach journey on the Klondike Highway into Canada's Yukon. Typical itineraries include Carcross and Emerald Lake, with lunch at a stop in the Yukon. The exact stops and lunch location vary by operator, and some departures run bus first — confirm when enquiring.",
+      "Combine the White Pass & Yukon Route railway with a motorcoach journey on the Klondike Highway into Canada's Yukon. Typical itineraries include Carcross and Emerald Lake, with lunch at a stop in the Yukon. Some departures run in reverse — bus out, train back. The exact stops, direction, and lunch location vary by operator and are confirmed when you enquire.",
     duration: "7 hours 30 minutes",
     activityLevel: "Moderate",
     bestFor: ["Full-day explorers", "Yukon first-timers", "Scenery collectors"],
@@ -136,15 +148,15 @@ export const tours: Tour[] = [
     whoShouldChoose:
       "Best for travelers whose top priority is seeing the Yukon itself — lakes, mountains, and cross-border scenery — with a White Pass Railway segment included.",
     whoShouldChooseDifferent:
-      "Choose a half-day rail tour if your ship has a short port call or you prefer more free time in Skagway. Passengers uncomfortable with border crossing paperwork should confirm passport requirements first.",
+      "Choose a half-day rail tour if your ship has a short port call or you prefer more free time in Skagway. If you're unsure about border documents, check our travel documents guide before you choose.",
     whatToBring: [
-      "Valid passport (required for Canada entry)",
+      "Passport or other accepted border documents for every traveller (see Border Crossing below)",
       "Warm layers — summit and Yukon areas can be cool",
       "Camera and wide-angle lens",
       "Motion-sickness remedy if sensitive on mountain roads",
     ],
     returnToShipAdvice:
-      "Full-day Yukon tours require careful timing. Book the earliest available departure, carry your passport accessible for border stops, and avoid adding unrelated activities before or after without checking total elapsed time.",
+      "Full-day Yukon tours require careful timing. Book the earliest available departure, keep your border documents handy for both crossings, and avoid adding unrelated activities before or after without checking total elapsed time.",
     categories: ["yukon", "white-pass-railway"],
     priceFrom: 387,
     priceVerifiedOn: null,
@@ -159,6 +171,10 @@ export const tours: Tour[] = [
     ],
     familyFriendly: false,
     privateOption: false,
+    crossesIntoCanada: "yes",
+    requirements: [
+      "Trains and tour vehicles are generally not wheelchair accessible",
+    ],
   },
   {
     slug: "white-pass-summit-yukon-suspension-bridge",
@@ -166,11 +182,11 @@ export const tours: Tour[] = [
     shortDescription:
       "Rail over White Pass, then on to the Yukon Suspension Bridge above the Tutshi River canyon in northern British Columbia.",
     description:
-      "Ride the White Pass & Yukon Route railway over the summit to Fraser, British Columbia, then continue by road to the Yukon Suspension Bridge, which spans the Tutshi River canyon on the South Klondike Highway. Despite its name, the bridge is in northern British Columbia, and crossing it is optional. The bridge is usually open from early May to late September; road-only versions of this tour are shorter, at around 3½ hours.",
+      "Ride the White Pass & Yukon Route railway over the summit to Fraser, British Columbia, then continue by road to the Yukon Suspension Bridge, which spans the Tutshi River canyon on the South Klondike Highway. Despite its name, the bridge is in northern British Columbia, not the Yukon, and crossing it is optional. The attraction is typically open from early May to late September; road-only versions of this tour are shorter, at around 3½ hours.",
     duration: "4 hours 30 minutes",
     activityLevel: "Easy",
     bestFor: ["Adventurous sightseers", "Bridge and canyon photography", "Rail plus extra wow-factor"],
-    walkingRequired: "Easy walking on the bridge and viewpoint platforms — crossing the bridge is optional. Generally not suitable for wheelchairs or scooters; confirm when enquiring.",
+    walkingRequired: "Easy walking on the bridge and viewpoint platforms — crossing the bridge is optional.",
     foodDrink: "Not included",
     cruiseConfidence: "Medium Cruise Confidence",
     whoShouldChoose:
@@ -178,7 +194,7 @@ export const tours: Tour[] = [
     whoShouldChooseDifferent:
       "Choose the full Yukon Rail and Bus Adventure for Emerald Lake and deeper Canadian scenery. Choose dog sledding if animal experiences matter more than canyon views.",
     whatToBring: [
-      "Passport (required — this route enters Canada)",
+      "Passport or other accepted border documents for every traveller (see Border Crossing below)",
       "Secure hat and sunglasses for windy bridge areas",
       "Non-slip footwear",
       "Rain layer",
@@ -198,28 +214,32 @@ export const tours: Tour[] = [
     ],
     familyFriendly: true,
     privateOption: false,
+    crossesIntoCanada: "yes",
+    requirements: [
+      "Generally not suitable for wheelchairs, scooters, or strollers",
+    ],
   },
   {
     slug: "bennett-scenic-journey",
     name: "Bennett Scenic Journey",
     shortDescription:
-      "Full-day White Pass & Yukon Route journey by train to historic Bennett and Carcross, with a motorcoach leg and lunch on board.",
+      "Full-day rail journey over White Pass to historic Bennett, BC, and Carcross, Yukon, typically with a motorcoach leg and lunch on board.",
     description:
-      "A full-day journey on the White Pass & Yukon Route: about 67.5 miles by train between Skagway and Carcross, Yukon, along the Klondike stampeders' route, with a stop of around 45 minutes at historic Bennett, British Columbia, and a motorcoach leg on the Klondike Highway. Lunch is served on board. Departures run train first or bus first, and the season is shorter than most tours (late May to mid-September).",
+      "Primarily a rail experience: a full day on the White Pass & Yukon Route line, following the Klondike stampeders' route over White Pass to historic Bennett, British Columbia, and on to Carcross, Yukon. On most versions, about 67.5 miles is by train, with a stop at Bennett (typically around 45 minutes) and one leg by motorcoach on the Klondike Highway; lunch is typically served on board. Departures can run train first or bus first, and the season is shorter than most tours (typically late May to mid-September). The exact itinerary, direction, and inclusions depend on the operator and are confirmed when you enquire.",
     duration: "8 hours",
     activityLevel: "Moderate",
     bestFor: ["Dedicated photographers", "Long port days", "Scenic road-trip lovers"],
-    walkingRequired: "Moderate — optional self-guided walk around the historic Bennett townsite. The train has no wheelchair lift.",
-    foodDrink: "Lunch included (served on board)",
+    walkingRequired: "Moderate — steps onto the train and coach, plus an optional walk around the historic Bennett townsite.",
+    foodDrink: "Lunch typically included (served on board — confirm when enquiring)",
     cruiseConfidence: "Plan Carefully",
     whoShouldChoose:
       "Ideal for passengers on ships with extended Skagway time who want the fullest White Pass rail experience rather than a short rail hop.",
     whoShouldChooseDifferent:
       "Avoid if your all-aboard window is tight or you are prone to fatigue on long coach days. Half-day rail tours are better for shorter calls.",
     whatToBring: [
-      "Passport (required)",
+      "Passport or other accepted border documents for every traveller (see Border Crossing below)",
       "Comfortable walking shoes for Bennett",
-      "Snacks beyond the included lunch",
+      "Snacks beyond the lunch",
       "Camera — the route runs the length of Lake Bennett",
     ],
     returnToShipAdvice:
@@ -228,16 +248,20 @@ export const tours: Tour[] = [
     priceFrom: 399,
     priceVerifiedOn: null,
     format: null,
-    image: "/tours/bennett-scenic-journey.png",
-    imageAlt: "Green subalpine valley and spruce forest below rugged, cloud-topped mountain ridges",
+    image: null,
+    imageAlt: "Skagway shore excursion planning — full-day rail journey to Bennett and Carcross",
     highlights: [
-      "White Pass & Yukon Route train to Carcross",
+      "Train over White Pass toward Bennett and Carcross",
       "Stop at historic Bennett, BC",
       "Klondike Highway motorcoach leg",
-      "Lunch served on board",
+      "Lunch typically served on board",
     ],
     familyFriendly: false,
     privateOption: false,
+    crossesIntoCanada: "yes",
+    requirements: [
+      "The train typically has no wheelchair lift; guests climb a few steps onto the train and coach",
+    ],
   },
   {
     slug: "summit-views-sled-dogs",
@@ -245,11 +269,11 @@ export const tours: Tour[] = [
     shortDescription:
       "White Pass summit scenery with a visit to a sled dog camp and a summer cart ride.",
     description:
-      "Combine White Pass summit viewpoints with a visit to a sled dog camp across the border in Canada. Meet working sled dogs, hear from the mushers about how they train, and take a short ride on a wheeled cart pulled by the team — summer rides use carts rather than snow sleds.",
+      "Combine White Pass summit viewpoints with a visit to a sled dog camp — on most versions, across the border in Canada. Meet working sled dogs, hear from the mushers about how they train, and take a short ride on a wheeled cart pulled by the team — summer rides use carts rather than snow sleds.",
     duration: "4 hours 30 minutes",
     activityLevel: "Easy",
     bestFor: ["Animal lovers", "Families with kids", "Unique Alaska experiences"],
-    walkingRequired: "Minimal — short walks at the dog camp. The cart ride can be bumpy; operators typically don't recommend it for guests with back or heart conditions or who are pregnant. Age rules vary by operator.",
+    walkingRequired: "Minimal — short walks at the dog camp.",
     foodDrink: "Not included",
     cruiseConfidence: "Medium Cruise Confidence",
     whoShouldChoose:
@@ -258,12 +282,12 @@ export const tours: Tour[] = [
       "Choose helicopter glacier tours for aerial ice-field views. Choose Yukon day trips if cross-border landscapes are your primary goal rather than mushing.",
     whatToBring: [
       "Warm layer for summit stops",
-      "Passport (required — the camp is in Canada)",
+      "Passport or other accepted border documents for every traveller (see Border Crossing below)",
       "Closed-toe shoes",
       "Hand sanitizer after animal encounters",
     ],
     returnToShipAdvice:
-      "At around 4½ hours with a border crossing, this fits most standard port days. Morning departures leave room for downtown Skagway time after your tour.",
+      "At around 4½ hours, usually with a border crossing, this fits most standard port days. Morning departures leave room for downtown Skagway time after your tour.",
     categories: ["dog-sledding", "family-friendly"],
     priceFrom: 239,
     priceVerifiedOn: null,
@@ -277,6 +301,11 @@ export const tours: Tour[] = [
     ],
     familyFriendly: true,
     privateOption: false,
+    crossesIntoCanada: "most",
+    requirements: [
+      "The cart ride can be bumpy — typically not recommended for guests with back or heart conditions, or who are pregnant",
+      "Minimum age rules vary by operator",
+    ],
   },
   {
     slug: "helicopter-glacier-discovery",
@@ -284,7 +313,7 @@ export const tours: Tour[] = [
     shortDescription:
       "Helicopter flight to a glacier near Skagway with time on the ice — a short, high-impact excursion.",
     description:
-      "Fly over the Coast Mountains from the Skagway waterfront and land on a glacier for a guided walk on the ice. Typical tours take about two hours in total, including around 40 minutes of flying and 40 minutes on the glacier; routes and landing sites depend on the day's weather and glacier conditions.",
+      "Fly over the Coast Mountains from Skagway and land on a glacier for a guided walk on the ice — the landing is the heart of this tour, not an add-on. Typical tours take about two hours in total, including check-in and a safety briefing, with around 40 minutes of flying and 40 minutes on the glacier. Routes and landing sites depend on the day's weather and glacier conditions.",
     duration: "2 hours",
     activityLevel: "Moderate",
     bestFor: ["Bucket-list flyers", "Time-efficient adventurers", "Aerial photographers"],
@@ -294,7 +323,7 @@ export const tours: Tour[] = [
     whoShouldChoose:
       "Best when aerial glacier views are your top Alaska priority and you want maximum impact in minimum time — leaving the rest of your port day free.",
     whoShouldChooseDifferent:
-      "Choose White Pass Railway if historic ground-based scenery matters more. Flights are weather dependent, so have a backup plan. Weight surcharges typically apply from 250 lb, and medical and pregnancy guidance varies by operator — confirm when enquiring.",
+      "Choose White Pass Railway if historic ground-based scenery matters more. Flights are weather dependent, so have a backup plan. See the requirements below for weight and mobility rules.",
     whatToBring: [
       "Sunglasses",
       "Warm layer for alpine air",
@@ -316,6 +345,13 @@ export const tours: Tour[] = [
     ],
     familyFriendly: true,
     privateOption: false,
+    crossesIntoCanada: "no",
+    requirements: [
+      "Weight surcharges typically apply from about 250 lb (113 kg)",
+      "Moderate mobility: high helicopter steps and about a quarter-mile walk over uneven glacier terrain",
+      "Weather dependent — flights can be delayed, rerouted, or cancelled",
+      "Medical and pregnancy guidance varies by operator",
+    ],
   },
   {
     slug: "self-guided-jeep-to-yukon",
@@ -333,9 +369,9 @@ export const tours: Tour[] = [
     whoShouldChoose:
       "Ideal if you want Yukon scenery with freedom to linger at photo stops, and you are comfortable driving mountain highways in a provided vehicle.",
     whoShouldChooseDifferent:
-      "Choose guided coach or rail tours if you prefer a live guide and hands-free sightseeing. Not suited for passengers uncomfortable on mountain roads. Driver age, licence, and insurance rules apply (one Skagway operator requires drivers to be 21 or over) — confirm when enquiring.",
+      "Choose guided coach or rail tours if you prefer a live guide and hands-free sightseeing. Not suited for passengers uncomfortable on mountain roads. See the requirements below for driver rules.",
     whatToBring: [
-      "Valid driver's license, plus a passport for every passenger",
+      "Driver's licence for each driver, plus passport or other accepted border documents for every passenger (see Border Crossing below)",
       "Follow the operator's fuel, mileage, and route guidance",
       "Offline maps backup",
       "Picnic lunch or snack budget",
@@ -355,6 +391,12 @@ export const tours: Tour[] = [
     ],
     familyFriendly: false,
     privateOption: true,
+    crossesIntoCanada: "yes",
+    requirements: [
+      "Drivers need a valid driver's licence; the minimum driver age is typically 21",
+      "Insurance cover and mileage limits are set by the rental operator",
+      "Passenger numbers are limited by vehicle size",
+    ],
   },
   {
     slug: "scenic-waterfall-adventure",
@@ -377,10 +419,10 @@ export const tours: Tour[] = [
       "Waterproof jacket — mist at falls",
       "Non-slip shoes",
       "Camera with lens cloth",
-      "Passport (required — typical routes cross into Canada)",
+      "Passport or other accepted border documents for every traveller (see Border Crossing below)",
     ],
     returnToShipAdvice:
-      "Three-hour format leaves generous pier buffer on most cruise schedules. Typical versions cross into Canada, so bring your passport and allow for border checks.",
+      "Three-hour format leaves generous pier buffer on most cruise schedules. Typical versions cross into Canada, so bring border documents for everyone and allow for border checks.",
     categories: ["family-friendly"],
     priceFrom: 85,
     priceVerifiedOn: null,
@@ -394,6 +436,8 @@ export const tours: Tour[] = [
     ],
     familyFriendly: true,
     privateOption: false,
+    crossesIntoCanada: "most",
+    requirements: [],
   },
   {
     slug: "ocean-raft-adventure",
@@ -411,7 +455,7 @@ export const tours: Tour[] = [
     whoShouldChoose:
       "Choose this when you want marine Alaska — salt air, fjord cliffs, and speed — rather than summit railways or Yukon highways.",
     whoShouldChooseDifferent:
-      "Not ideal for passengers sensitive to spray, rough motion, or engine noise. Typical restrictions include a minimum age of around 10, a maximum weight of about 350 lb, and no participation during pregnancy or with back or neck conditions — confirm when enquiring. Choose scenic waterfall or city tours for gentler pacing.",
+      "Not ideal for passengers sensitive to spray, rough motion, or engine noise, and not suitable for younger children — see the requirements below. Choose scenic waterfall or city tours for gentler pacing.",
     whatToBring: [
       "Sunglasses",
       "Camera or phone with a strap",
@@ -433,6 +477,12 @@ export const tours: Tour[] = [
     ],
     familyFriendly: false,
     privateOption: false,
+    crossesIntoCanada: "no",
+    requirements: [
+      "Minimum age typically around 10",
+      "Maximum weight typically about 350 lb (159 kg)",
+      "Typically not permitted during pregnancy or with back or neck conditions",
+    ],
   },
 ];
 
@@ -459,6 +509,23 @@ export function verifiedPrice(tour: Tour): number | null {
 export function priceLabel(tour: Tour): string {
   const price = verifiedPrice(tour);
   return price === null ? "Price on enquiry" : `From ${formatPrice(price)}`;
+}
+
+export const borderLabel: Record<BorderCrossing, string> = {
+  yes: "Crosses into Canada",
+  most: "Most versions cross into Canada",
+  no: "Stays in Alaska",
+};
+
+export function borderNote(tour: Tour): string {
+  switch (tour.crossesIntoCanada) {
+    case "yes":
+      return "This tour crosses into Canada and back into the U.S. Every traveller needs accepted border documents.";
+    case "most":
+      return "Most versions of this tour cross into Canada and back into the U.S., so plan on accepted border documents for every traveller.";
+    case "no":
+      return "Typical versions of this tour stay in Alaska, with no border crossing.";
+  }
 }
 
 export function tourOptions(): { slug: string; name: string }[] {

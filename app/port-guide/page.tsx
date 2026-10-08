@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageHeader, CTABanner } from "@/components/PageHeader";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { TravelDocuments } from "@/components/TravelDocuments";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
 import { cta } from "@/lib/site";
@@ -83,13 +84,15 @@ export default function PortGuidePage() {
             Skagway is a gateway to Canada&apos;s Yukon and northern British Columbia.
             Emerald Lake, the Yukon Suspension Bridge over the Tutshi River canyon, and
             Klondike Highway scenery are all within a day trip — but most tours from
-            Skagway cross the border, so you need a valid passport.{" "}
+            Skagway cross the border, so check the documents you need below.{" "}
             <Link href="/yukon-tours-from-skagway/" className="text-glacier font-medium">
               View Yukon tours from Skagway
             </Link>
             .
           </p>
         </section>
+
+        <TravelDocuments />
 
         <section className="rounded-xl border border-forest/10 bg-white p-6 shadow-sm lg:p-8">
           <h2 className="font-display text-xl font-semibold text-forest">
