@@ -41,7 +41,7 @@ export default function HomePage() {
       <Hero
         eyebrow="Skagway Shore Excursions"
         title="Explore Skagway Beyond the Cruise Ship"
-        subtitle="Discover carefully selected Skagway shore excursions, from the legendary White Pass Railway to scenic small-group adventures. Designed around your time in port."
+        subtitle="Discover carefully selected Skagway shore excursions, from the legendary White Pass Railway to scenic guided adventures. Designed around your time in port."
         image="/hero-white-pass-railway.png"
         imageAlt="The vintage White Pass and Yukon Route train with iconic red roofs winds through the steep, forested mountains of Skagway, Alaska"
         primaryCta={{ href: "/excursions/", label: cta.exploreExcursions }}
@@ -88,7 +88,7 @@ export default function HomePage() {
             Browse by Theme
           </h2>
           <p className="mt-2 text-mountain">
-            Railway, Yukon, dog sledding, helicopters, private tours, and
+            Railway, Yukon, dog sledding, helicopters, self-drive, and
             family-friendly Skagway excursions.
           </p>
           <div className="mt-8">

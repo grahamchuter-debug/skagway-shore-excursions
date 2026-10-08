@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
-import { enquiryConfig, siteConfig } from "@/lib/site";
+import { enquiryConfig, privacyPolicy, siteConfig } from "@/lib/site";
 
 type Variant = "tour" | "supplier";
 
@@ -94,7 +94,7 @@ function validate(form: FormData, variant: Variant, tourSlugs: Set<string>): Err
     if (message.length < 2) errors.message = "Please tell us about the tours you operate.";
   }
 
-  if (form.get("consent") !== "yes") errors.consent = "Please confirm you agree to the privacy policy.";
+  if (form.get("consent") !== "yes") errors.consent = "Please confirm you agree to how we'll use your details.";
   return errors;
 }
 
@@ -450,6 +450,39 @@ export function EnquiryForm({ variant, tours = [] }: EnquiryFormProps) {
         <input id="enq-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
+      <section aria-labelledby="enq-privacy-heading" id="enq-privacy" className="rounded-lg bg-cream px-4 py-3 text-sm text-mountain">
+        <h2 id="enq-privacy-heading" className="font-semibold text-forest">
+          How we use your details
+        </h2>
+        <p className="mt-1 leading-relaxed">
+          {siteConfig.name} is a {siteConfig.parentBrand}{" "}brand. We use what you send in this form only to
+          reply to your enquiry and, if you go ahead, to arrange your tour with the operator involved. We
+          don&apos;t sell your details or use them for marketing.
+        </p>
+        <p className="mt-2 leading-relaxed">
+          Your enquiry is stored in our enquiry system on Cloudflare and emailed to the{" "}
+          {siteConfig.parentBrand} team. To prevent spam we keep a one-way fingerprint of your IP and email
+          address, not the addresses themselves. Personal details are deleted automatically after two
+          years (spam after 30 days).
+        </p>
+        <p className="mt-2 leading-relaxed">
+          To see, correct, or delete your details, email{" "}
+          <a href={`mailto:${siteConfig.email}`} className="font-medium text-glacier underline hover:text-forest">
+            {siteConfig.email}
+          </a>{" "}
+          with your enquiry reference.
+          {privacyPolicy.published && (
+            <>
+              {" "}Read our full{" "}
+              <a href={privacyPolicy.path} className="font-medium text-glacier underline hover:text-forest">
+                privacy policy
+              </a>
+              .
+            </>
+          )}
+        </p>
+      </section>
+
       <div>
         <div className="flex items-start gap-3">
           <input
@@ -463,10 +496,10 @@ export function EnquiryForm({ variant, tours = [] }: EnquiryFormProps) {
             className="mt-1 h-4 w-4 shrink-0 accent-forest"
           />
           <label htmlFor={FIELD_IDS.consent} className="text-sm text-mountain">
-            I agree that Skagway Shore Excursions (part of Wow A Tour) may use these details to reply to my
-            enquiry, as described in the{" "}
-            <a href="/privacy/" className="font-medium text-glacier underline hover:text-forest">
-              privacy policy
+            I agree to {siteConfig.name} ({siteConfig.parentBrand}) using these details to reply to my
+            enquiry, as explained in{" "}
+            <a href="#enq-privacy" className="font-medium text-glacier underline hover:text-forest">
+              how we use your details
             </a>
             . <span className="text-red-700">*</span>
           </label>
@@ -507,7 +540,7 @@ export function EnquiryForm({ variant, tours = [] }: EnquiryFormProps) {
         </p>
       </noscript>
       <p className="text-xs text-mountain">
-        Fields marked <span className="text-red-700">*</span> are required. We reply by email; sending an enquiry
+        Fields marked <span className="text-red-700">*</span>{" "}are required. We reply by email; sending an enquiry
         doesn&apos;t commit you to a booking.
       </p>
     </form>

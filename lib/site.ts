@@ -10,10 +10,21 @@ export const siteConfig = {
   parentBrand: "Wow A Tour",
   /**
    * Legal operator and data controller shown in the privacy policy.
-   * TODO(owner): confirm the exact Wow A Tour legal entity before the privacy policy goes live.
-   * While null, /privacy/ renders a visible "draft" notice.
+   * TODO(owner): pending the owner's confirmation of the exact Wow A Tour legal entity.
    */
   legalOperator: null as string | null,
+} as const;
+
+/**
+ * The privacy policy stays unpublished until `siteConfig.legalOperator` is confirmed.
+ * While unpublished, the draft lives in app/_privacy-draft (Next.js never builds `_` folders),
+ * nothing links to /privacy/, and the enquiry forms show an inline privacy notice instead.
+ * To publish: set legalOperator, set `published: true`, and rename app/_privacy-draft to
+ * app/privacy (see README).
+ */
+export const privacyPolicy = {
+  published: false,
+  path: "/privacy/",
 } as const;
 
 export const enquiryConfig = {
@@ -58,7 +69,7 @@ export const categoryLinks = [
   },
   {
     href: "/private-skagway-tours/",
-    label: "Private Tours",
+    label: "Private & Self-Drive",
     description: "Custom pacing for your group",
   },
   {

@@ -6,15 +6,15 @@ export function CruiseConfidenceSection() {
       level: "High Cruise Confidence",
       className: "confidence-high",
       description:
-        "Half-day formats (typically 4½ hours or less) without a Canadian border crossing that generally align well with standard cruise schedules. Still confirm your all-aboard time.",
-      examples: "Helicopter discovery, city & summit, White Pass rail & bus, sled dogs, ocean raft, waterfall tours",
+        "Shorter formats (about 3½ hours or less) that generally align well with standard cruise schedules — some include a brief crossing into British Columbia. Still confirm your all-aboard time.",
+      examples: "Helicopter discovery, city & summit, White Pass rail & bus, ocean raft, waterfall tours",
     },
     {
       level: "Medium Cruise Confidence",
       className: "confidence-medium",
       description:
-        "Half- to full-day tours with border crossings or self-drive elements. Choose morning departures and carry your passport.",
-      examples: "Yukon rail & bus, suspension bridge rail combo, Jeep to Yukon",
+        "Longer half-day (around 4–5 hours) or full-day tours that go further into Canada, or self-drive. Choose morning departures and carry your passport.",
+      examples: "Summit & sled dogs, suspension bridge rail combo, Yukon rail & bus, Jeep to Yukon",
     },
     {
       level: "Plan Carefully",
@@ -57,8 +57,8 @@ export function CruiseConfidenceSection() {
         ))}
       </div>
       <p className="mt-6 text-sm text-white/60">
-        Tip: Book morning departures, keep your passport accessible for Yukon
-        routes, and leave buffer time before all-aboard — especially on full-day
+        Tip: Book morning departures, keep your passport accessible — most tours
+        from Skagway cross into Canada — and leave buffer time before all-aboard — especially on full-day
         adventures. {cta.compareTours} on our excursions page.
       </p>
     </section>

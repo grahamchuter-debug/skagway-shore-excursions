@@ -12,7 +12,7 @@ export default function YukonToursPage() {
   return (
     <CategoryPageContent
       title="Yukon Tours from Skagway"
-      description="Cross into Canada's Yukon Territory for alpine lakes, tundra vistas, and the Tutshi River Canyon suspension bridge. These full-day Skagway shore excursions deliver the interior Alaska scenery passengers dream about — with passport requirements and cruise schedule planning built in."
+      description="Cross into Canada for Emerald Lake and Carcross in the Yukon, the Yukon Suspension Bridge over the Tutshi River canyon in northern British Columbia, and the Klondike Highway. These half-day to full-day Skagway shore excursions come with passport and cruise schedule guidance built in."
       path="/yukon-tours-from-skagway/"
       category="yukon"
       extraContent={

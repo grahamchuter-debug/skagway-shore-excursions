@@ -46,7 +46,7 @@ const itineraries = [
   },
   {
     title: "Family Day",
-    confidence: "High Cruise Confidence",
+    confidence: "High to Medium Cruise Confidence",
     steps: [
       "Summit Views and Sled Dogs for husky encounters plus mountain scenery",
       "Afternoon stroll on Broadway — short walks, ice cream, and park visitor center",

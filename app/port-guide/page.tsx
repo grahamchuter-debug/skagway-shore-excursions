@@ -39,10 +39,10 @@ export default function PortGuidePage() {
             Getting Ashore
           </h2>
           <p className="mt-3 text-mountain leading-relaxed">
-            Most cruise ships dock at the Broadway pier or nearby terminals, placing
-            you within a five- to ten-minute walk of historic downtown Skagway.
-            Tour operators for White Pass Railway and motorcoach excursions typically
-            meet passengers at the pier or a short shuttle away.
+            Cruise ships dock at Skagway&apos;s waterfront piers, a short walk from
+            historic downtown — how far depends on which dock your ship uses. Meeting
+            points vary by operator: some meet at the pier, others in town, so check
+            your confirmation.
           </p>
         </section>
 
@@ -80,9 +80,10 @@ export default function PortGuidePage() {
             Yukon Territory Access
           </h2>
           <p className="mt-3 text-mountain leading-relaxed">
-            Skagway is the closest Alaska port for crossing into Canada&apos;s Yukon.
-            Emerald Lake, the Tutshi River Canyon suspension bridge, and Klondike
-            Highway scenery await — but you need a valid passport.{" "}
+            Skagway is a gateway to Canada&apos;s Yukon and northern British Columbia.
+            Emerald Lake, the Yukon Suspension Bridge over the Tutshi River canyon, and
+            Klondike Highway scenery are all within a day trip — but most tours from
+            Skagway cross the border, so you need a valid passport.{" "}
             <Link href="/yukon-tours-from-skagway/" className="text-glacier font-medium">
               View Yukon tours from Skagway
             </Link>

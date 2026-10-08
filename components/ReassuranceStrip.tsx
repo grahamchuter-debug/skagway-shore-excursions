@@ -5,7 +5,7 @@ const items = [
   },
   {
     title: "Guided and independent options",
-    detail: "Narrated rail and coach tours or a self-guided Jeep route",
+    detail: "Guided coach and glacier tours, rail journeys, or a self-drive Jeep route",
   },
   {
     title: "Help choosing the right tour",

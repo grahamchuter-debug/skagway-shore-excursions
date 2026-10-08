@@ -7,7 +7,7 @@ export const faqs = [
   {
     question: "Do I need a passport for Skagway shore excursions?",
     answer:
-      "Passports are required for tours that enter Canada — including most full Yukon day trips and many summit-bridge itineraries. Even for U.S.-only routes, carrying a passport is strongly recommended because operators and border procedures can change.",
+      "Most tours from Skagway cross into Canada — including White Pass rail-and-bus combinations, summit and waterfall drives, sled dog camps beyond the summit, the suspension bridge, and Yukon day trips — so plan on a valid passport for every traveler. A rail-only White Pass Summit round trip that turns back at the summit doesn't enter Canada. Operators often require original passports for everyone 16 and over, and non-U.S. citizens should check Canada's entry rules and make sure they can re-enter the U.S. Confirm document requirements when you enquire.",
   },
   {
     question: "What does High Cruise Confidence mean?",
@@ -27,7 +27,7 @@ export const faqs = [
   {
     question: "Are Skagway excursions good for families?",
     answer:
-      "Yes. Family-friendly options include city-and-summit tours, summit sled dog experiences, helicopter flightseeing, scenic waterfall drives, and gentle fjord raft adventures. Match activity level and duration to younger travelers' stamina.",
+      "Yes. Family-friendly options include White Pass rail tours, city-and-summit tours, summit sled dog experiences, helicopter glacier tours, and scenic waterfall drives. Age, weight, and health rules vary by tour — the ocean raft, for example, typically has a minimum age of 10 — so tell us your children's ages when you enquire.",
   },
   {
     question: "How do I book or enquire about a Skagway tour?",
@@ -42,7 +42,7 @@ export const faqs = [
   {
     question: "What should I wear on a Skagway port day?",
     answer:
-      "Layer clothing for changeable mountain weather: base layer, fleece, waterproof jacket, and comfortable walking shoes. Summit and Yukon areas can be 15–20°F cooler than downtown. Gloves and a hat help on open-air rail cars and boat tours.",
+      "Layer clothing for changeable mountain weather: base layer, fleece, waterproof jacket, and comfortable walking shoes. The summit and Yukon can be noticeably cooler and windier than downtown. Gloves and a hat help on open-air rail cars and boat tours.",
   },
   {
     question: "Can I walk to downtown Skagway from the cruise pier?",

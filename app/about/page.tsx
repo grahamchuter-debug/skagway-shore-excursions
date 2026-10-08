@@ -4,7 +4,7 @@ import { CTABanner } from "@/components/PageHeader";
 import { JsonLd } from "@/components/JsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, webpageSchema } from "@/lib/schema";
-import { cta, enquireHref, siteConfig } from "@/lib/site";
+import { cta, enquireHref, privacyPolicy, siteConfig } from "@/lib/site";
 
 const title = "About Skagway Shore Excursions — a Wow A Tour Brand";
 const description =
@@ -65,8 +65,8 @@ export default function AboutPage() {
           <p className={bodyClass}>
             {siteConfig.parentBrand} distributes shore excursions through established travel
             marketplaces, including Viator, Shore Excursions Group, and GetYourGuide. That
-            experience shapes how we describe tours here: realistic durations, activity
-            levels, and return-to-ship timing for cruise passengers.
+            experience shapes what we focus on here: duration, activity level, and
+            return-to-ship timing for cruise passengers.
           </p>
           <p className="mt-3 text-sm text-mountain leading-relaxed">
             These marketplaces do not endorse this website. Naming them does not mean that
@@ -103,7 +103,7 @@ export default function AboutPage() {
         <section className={sectionClass}>
           <h2 className={headingClass}>Skagway tour operators</h2>
           <p className={bodyClass}>
-            We&apos;re talking with local Skagway operators ahead of the 2027 cruise season.
+            We&apos;re looking to work with local Skagway operators ahead of the 2027 cruise season.
             If you run tours in Skagway and would like to work with us, we&apos;d like to hear
             from you.
           </p>
@@ -122,11 +122,18 @@ export default function AboutPage() {
             <a href={`mailto:${siteConfig.email}`} className="font-medium text-glacier underline hover:text-forest">
               {siteConfig.email}
             </a>{" "}
-            and we&apos;ll reply by email. See our{" "}
-            <Link href="/privacy/" className="font-medium text-glacier underline hover:text-forest">
-              privacy policy
-            </Link>{" "}
-            for how we handle enquiry details.
+            and we&apos;ll reply by email.
+            {privacyPolicy.published ? (
+              <>
+                {" "}See our{" "}
+                <Link href={privacyPolicy.path} className="font-medium text-glacier underline hover:text-forest">
+                  privacy policy
+                </Link>{" "}
+                for how we handle enquiry details.
+              </>
+            ) : (
+              " Our enquiry form explains how we use the details you send us."
+            )}
           </p>
         </section>
       </div>

@@ -12,7 +12,7 @@ export default function DogSleddingPage() {
   return (
     <CategoryPageContent
       title="Skagway Dog Sledding Tours"
-      description="Experience Alaska's mushing tradition at musher camps near White Pass Summit. Summer tours use wheeled carts on forest trails; you'll meet working sled dogs, learn training techniques, and enjoy alpine scenery — a favorite for families and animal lovers."
+      description="Meet working sled dogs and their mushers on a summer dog camp tour from Skagway. Summer rides use wheeled carts rather than snow sleds. Camps beyond White Pass Summit are in Canada, so bring your passport; age and health rules vary by operator."
       path="/skagway-dog-sledding-tours/"
       category="dog-sledding"
     />

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteConfig, categoryLinks, cta, enquireHref } from "@/lib/site";
+import { siteConfig, categoryLinks, cta, enquireHref, privacyPolicy } from "@/lib/site";
 
 const exploreLinks = [
   { href: "/excursions/", label: "All Excursions" },
@@ -12,7 +12,7 @@ const companyLinks = [
   { href: "/about/", label: "About Us" },
   { href: "/enquire/", label: "Enquire About a Tour" },
   { href: "/partners/", label: "Tour Operator Partnerships" },
-  { href: "/privacy/", label: "Privacy Policy" },
+  ...(privacyPolicy.published ? [{ href: privacyPolicy.path, label: "Privacy Policy" }] : []),
 ];
 
 export function Footer() {

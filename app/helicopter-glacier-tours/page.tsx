@@ -12,7 +12,7 @@ export default function HelicopterPage() {
   return (
     <CategoryPageContent
       title="Helicopter Glacier Tours"
-      description="See Skagway's glaciers from above on helicopter flightseeing tours. These compact aerial adventures pack dramatic ice-field views into roughly 90 minutes — ideal when you want maximum wow-factor and time left to explore downtown Gold Rush Skagway."
+      description="See Skagway's glaciers from above on helicopter flightseeing tours. Typical glacier tours take about two hours in total, including a landing and guided walk on the ice — leaving time to explore downtown Gold Rush Skagway."
       path="/helicopter-glacier-tours/"
       category="helicopter-glacier"
       extraContent={

@@ -14,8 +14,10 @@ export const metadata = createMetadata({
 const headingClass = "font-display text-xl font-semibold text-forest";
 const bodyClass = "mt-3 text-mountain leading-relaxed";
 
-// TODO(owner): confirm the exact Wow A Tour legal operator / data controller and set
-// `siteConfig.legalOperator` in lib/site.ts. Do not publish this policy until then.
+// UNPUBLISHED DRAFT. This folder starts with "_", so Next.js does not build it.
+// TODO(owner): confirm the Wow A Tour legal operator / data controller, set
+// `siteConfig.legalOperator` and `privacyPolicy.published` in lib/site.ts, then rename this
+// folder to app/privacy. Keep the inline notice in EnquiryForm consistent with this page.
 export default function PrivacyPage() {
   const operator = siteConfig.legalOperator;
 
