@@ -455,7 +455,8 @@ export function EnquiryForm({ variant, tours = [] }: EnquiryFormProps) {
           How we use your details
         </h2>
         <p className="mt-1 leading-relaxed">
-          {siteConfig.name} is a {siteConfig.parentBrand}{" "}brand. We use what you send in this form only to
+          {siteConfig.name} is a {siteConfig.parentBrand}{" "}brand. {siteConfig.legalOperator.name} (company
+          no. {siteConfig.legalOperator.companyNumber}) is the data controller. We use what you send in this form only to
           reply to your enquiry and, if you go ahead, to arrange your tour with the operator involved. We
           don&apos;t sell your details or use them for marketing.
         </p>
@@ -501,6 +502,14 @@ export function EnquiryForm({ variant, tours = [] }: EnquiryFormProps) {
             <a href="#enq-privacy" className="font-medium text-glacier underline hover:text-forest">
               how we use your details
             </a>
+            {privacyPolicy.published && (
+              <>
+                {" "}and our{" "}
+                <a href={privacyPolicy.path} className="font-medium text-glacier underline hover:text-forest">
+                  privacy policy
+                </a>
+              </>
+            )}
             . <span className="text-red-700">*</span>
           </label>
         </div>

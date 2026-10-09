@@ -9,21 +9,20 @@ export const siteConfig = {
   email: "hello@skagwayshoreexcursions.com",
   parentBrand: "Wow A Tour",
   /**
-   * Legal operator and data controller shown in the privacy policy.
-   * TODO(owner): pending the owner's confirmation of the exact Wow A Tour legal entity.
+   * Legal operator and data controller, as registered at Companies House (company 11426960).
+   * Not My Holidays On-Line (UK) Limited, which is a separate company.
    */
-  legalOperator: null as string | null,
+  legalOperator: {
+    name: "Wow A Tour Limited",
+    companyNumber: "11426960",
+    registeredIn: "England and Wales",
+    registeredOffice: "Kintyre House, 70 High Street, Fareham, Hampshire, PO16 7BB, United Kingdom",
+  },
 } as const;
 
-/**
- * The privacy policy stays unpublished until `siteConfig.legalOperator` is confirmed.
- * While unpublished, the draft lives in app/_privacy-draft (Next.js never builds `_` folders),
- * nothing links to /privacy/, and the enquiry forms show an inline privacy notice instead.
- * To publish: set legalOperator, set `published: true`, and rename app/_privacy-draft to
- * app/privacy (see README).
- */
+/** Published privacy policy (app/privacy). Kept noindex and out of the sitemap. */
 export const privacyPolicy = {
-  published: false,
+  published: true,
   path: "/privacy/",
 } as const;
 

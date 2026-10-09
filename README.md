@@ -48,24 +48,18 @@ npm run deploy   # next build + wrangler deploy
 - `NEXT_PUBLIC_ENQUIRY_ENDPOINT` — override the enquiry endpoint, e.g. a local mock for testing.
   Never set it for a production build.
 
-## Publishing the privacy policy
+## Privacy policy
 
-The privacy policy is unpublished until the legal operator / data controller is confirmed. The draft is
-in `app/_privacy-draft/` — Next.js does not build folders that start with `_`, so `/privacy/` is not in
-`out/`, and `privacyPolicy.published` (in `lib/site.ts`) hides every link to it. Meanwhile the enquiry
-forms show an inline "How we use your details" notice.
+The privacy policy is published at `/privacy/` (`app/privacy/page.tsx`). The data controller is
+Wow A Tour Limited (company 11426960), set in `siteConfig.legalOperator` in `lib/site.ts` and verified
+on Companies House in October 2026. The footer, About page and enquiry form link to it; it is noindex
+and not in the sitemap, and `https-redirect.js` lists `privacy` in `KNOWN_PAGES`.
 
-To publish once the owner has confirmed the entity:
-
-1. In `lib/site.ts`, set `siteConfig.legalOperator` to the confirmed legal name (and any registration
-   details the owner provides), and set `privacyPolicy.published` to `true`.
-2. `git mv app/_privacy-draft app/privacy`, remove the "UNPUBLISHED DRAFT" comment at the top of the
-   page, and update "Last updated".
-3. Re-read the policy and the inline notice in `components/EnquiryForm.tsx` against the owner's
-   confirmed answers (marketing use, sharing with operators, retention), and keep them consistent.
-4. `npm run lint && npm run build`, then check that `out/privacy/index.html` exists, shows no "Draft"
-   notice, and that the footer, About page and form link to it. `/privacy/` stays out of the sitemap
-   and is noindex; `https-redirect.js` already lists `privacy` in `KNOWN_PAGES`.
+When the way enquiries are handled changes (retention, processors, sharing, Turnstile), update the policy,
+its "Last updated" line and the inline "How we use your details" notice in
+`components/EnquiryForm.tsx` together. To take the policy offline again, set `privacyPolicy.published`
+to `false` (hides every link) and rename the folder to `app/_privacy-draft` (Next.js does not build
+folders that start with `_`).
 
 ## Pages
 

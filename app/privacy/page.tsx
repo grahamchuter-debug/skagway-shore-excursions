@@ -13,11 +13,9 @@ export const metadata = createMetadata({
 
 const headingClass = "font-display text-xl font-semibold text-forest";
 const bodyClass = "mt-3 text-mountain leading-relaxed";
+const linkClass = "font-medium text-glacier underline hover:text-forest";
 
-// UNPUBLISHED DRAFT. This folder starts with "_", so Next.js does not build it.
-// TODO(owner): confirm the Wow A Tour legal operator / data controller, set
-// `siteConfig.legalOperator` and `privacyPolicy.published` in lib/site.ts, then rename this
-// folder to app/privacy. Keep the inline notice in EnquiryForm consistent with this page.
+// Keep the inline notice in components/EnquiryForm.tsx consistent with this page.
 export default function PrivacyPage() {
   const operator = siteConfig.legalOperator;
 
@@ -34,22 +32,16 @@ export default function PrivacyPage() {
         description="How we handle the details you send us through this website."
       />
 
-      {!operator && (
-        <div role="note" className="mb-8 rounded-lg border border-gold/50 bg-gold-light/30 px-4 py-3 text-sm text-forest">
-          Draft: the legal operator and data controller named in this policy are being
-          confirmed.
-        </div>
-      )}
-
       <div className="space-y-8">
         <section>
           <h2 className={headingClass}>Who we are</h2>
           <p className={bodyClass}>
             Skagway Shore Excursions ({siteConfig.domain}) is a destination brand of{" "}
             {siteConfig.parentBrand}. The data controller for information you send us is{" "}
-            {operator ?? `the ${siteConfig.parentBrand} business that operates this brand`}.
+            {operator.name}, a company registered in {operator.registeredIn} (company number{" "}
+            {operator.companyNumber}), whose registered office is at {operator.registeredOffice}.
             You can contact us about privacy at{" "}
-            <a href={`mailto:${siteConfig.email}`} className="font-medium text-glacier underline hover:text-forest">
+            <a href={`mailto:${siteConfig.email}`} className={linkClass}>
               {siteConfig.email}
             </a>
             .
@@ -88,14 +80,24 @@ export default function PrivacyPage() {
         </section>
 
         <section>
+          <h2 className={headingClass}>Our lawful basis</h2>
+          <p className={bodyClass}>
+            We handle tour enquiries because you&apos;ve asked us to reply and help you plan a
+            tour — steps taken at your request before any booking. We handle partnership
+            enquiries, and the spam and abuse checks described above, on the basis of our
+            legitimate interests in running and protecting our enquiry service.
+          </p>
+        </section>
+
+        <section>
           <h2 className={headingClass}>Where it&apos;s stored and who processes it</h2>
           <p className={bodyClass}>
             Enquiries are sent to our enquiry service, which runs on Cloudflare (Cloudflare
             Workers and a Cloudflare D1 database). A notification email with your enquiry is
-            sent to our team&apos;s inbox through Cloudflare&apos;s email service. Cloudflare
-            also hosts this website and processes standard request data, such as IP address
-            and browser type, to deliver and protect it. Cloudflare may process data outside
-            your country.
+            sent through Cloudflare&apos;s email service to our team&apos;s inbox, which is
+            hosted by Google Workspace. Cloudflare also hosts this website and processes
+            standard request data, such as IP address and browser type, to deliver and protect
+            it. Cloudflare and Google may process data outside your country.
           </p>
         </section>
 
@@ -118,12 +120,20 @@ export default function PrivacyPage() {
         <section>
           <h2 className={headingClass}>Your rights</h2>
           <p className={bodyClass}>
-            You can ask to see, correct, or delete the personal information you&apos;ve sent us
-            by emailing{" "}
-            <a href={`mailto:${siteConfig.email}`} className="font-medium text-glacier underline hover:text-forest">
+            You can ask to see, correct, or delete the personal information you&apos;ve sent us,
+            or object to or ask us to restrict how we use it, by emailing{" "}
+            <a href={`mailto:${siteConfig.email}`} className={linkClass}>
               {siteConfig.email}
             </a>
             . Please include your enquiry reference if you have one.
+          </p>
+          <p className={bodyClass}>
+            If you&apos;re unhappy with how we&apos;ve handled your information, you can
+            complain to the UK Information Commissioner&apos;s Office at{" "}
+            <a href="https://ico.org.uk/make-a-complaint/" className={linkClass} rel="noopener noreferrer">
+              ico.org.uk
+            </a>
+            , or to the data protection authority where you live.
           </p>
         </section>
 
