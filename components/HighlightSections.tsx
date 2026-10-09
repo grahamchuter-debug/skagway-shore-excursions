@@ -8,8 +8,8 @@ export function WhitePassHighlight() {
       <div className="grid lg:grid-cols-2">
         <div className="relative min-h-[280px] lg:min-h-full">
           <Image
-            src="/hero-white-pass-railway.png"
-            alt="White Pass & Yukon Route railway train with red roofs winding through forested mountains near Skagway, Alaska"
+            src="/hero-white-pass-railway.webp"
+            alt="White Pass & Yukon Route train with vintage red-roofed coaches curving along a forested mountainside below snow-capped peaks"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -75,8 +75,8 @@ export function YukonHighlight() {
         </div>
         <div className="relative order-1 min-h-[280px] lg:order-2 lg:min-h-full">
           <Image
-            src="/tours/yukon-rail-and-bus-adventure.png"
-            alt="Wooden &quot;Yukon — Larger than Life&quot; sign beside a mountain highway at the entrance to Yukon Territory"
+            src="/tours/yukon-rail-and-bus-adventure.webp"
+            alt="Wooden &quot;Yukon — Larger than Life&quot; welcome sign at the Yukon border, with mountains and blue sky behind"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

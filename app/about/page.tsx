@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABanner } from "@/components/PageHeader";
 import { JsonLd } from "@/components/JsonLd";
+import { PhotoCredits } from "@/components/PhotoCredits";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, webpageSchema } from "@/lib/schema";
 import { cta, enquireHref, privacyPolicy, siteConfig } from "@/lib/site";
@@ -145,6 +146,8 @@ export default function AboutPage() {
           buttonLabel={cta.exploreExcursions}
         />
       </div>
+
+      <PhotoCredits />
     </div>
   );
 }

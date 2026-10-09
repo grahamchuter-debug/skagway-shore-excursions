@@ -42,8 +42,8 @@ export default function HomePage() {
         eyebrow="Skagway Shore Excursions"
         title="Explore Skagway Beyond the Cruise Ship"
         subtitle="Discover carefully selected Skagway shore excursions, from the legendary White Pass Railway to scenic guided adventures. Designed around your time in port."
-        image="/hero-white-pass-railway.png"
-        imageAlt="The vintage White Pass and Yukon Route train with iconic red roofs winds through the steep, forested mountains of Skagway, Alaska"
+        image="/hero-white-pass-railway.webp"
+        imageAlt="White Pass & Yukon Route train with vintage red-roofed coaches curving along a forested mountainside below snow-capped peaks"
         primaryCta={{ href: "/excursions/", label: cta.exploreExcursions }}
         secondaryCta={{ href: enquireHref(), label: cta.enquire }}
       />

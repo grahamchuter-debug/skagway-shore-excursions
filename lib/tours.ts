@@ -76,9 +76,9 @@ export const tours: Tour[] = [
     priceFrom: 289,
     priceVerifiedOn: null,
     format: null,
-    image: "/hero-white-pass-railway.png",
+    image: "/hero-white-pass-railway.webp",
     imageAlt:
-      "White Pass & Yukon Route railway train with red roofs winding through forested mountains near Skagway, Alaska",
+      "White Pass & Yukon Route train with vintage red-roofed coaches curving along a forested mountainside below snow-capped peaks",
     highlights: [
       "Historic narrow-gauge railway over White Pass Summit",
       "Klondike Highway motorcoach leg with photo stops (direction varies)",
@@ -120,8 +120,8 @@ export const tours: Tour[] = [
     priceFrom: 75,
     priceVerifiedOn: null,
     format: null,
-    image: "/tours/skagway-city-and-white-pass-summit.png",
-    imageAlt: "Sunny view of historic Broadway Street in Skagway, Alaska, with colorful Gold Rush buildings, a cruise ship at the pier, and snow-capped mountains",
+    image: "/tours/skagway-city-and-white-pass-summit.webp",
+    imageAlt: "Broadway in Skagway's historic district on a sunny day, with Gold Rush-era storefronts, the gold dome of the Golden North Hotel, and snow-capped mountains beyond",
     highlights: [
       "Historic downtown Skagway highlights",
       "White Pass Summit area photo stops",
@@ -161,8 +161,8 @@ export const tours: Tour[] = [
     priceFrom: 387,
     priceVerifiedOn: null,
     format: null,
-    image: "/tours/yukon-rail-and-bus-adventure.png",
-    imageAlt: "Wooden \"Yukon — Larger than Life\" sign beside a mountain highway at the entrance to Yukon Territory",
+    image: "/tours/yukon-rail-and-bus-adventure.webp",
+    imageAlt: "Wooden \"Yukon — Larger than Life\" welcome sign at the Yukon border, with mountains and blue sky behind",
     highlights: [
       "White Pass Railway segment",
       "Carcross and Emerald Lake (typical stops)",
