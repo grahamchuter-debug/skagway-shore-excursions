@@ -205,8 +205,8 @@ export const tours: Tour[] = [
     priceFrom: 349,
     priceVerifiedOn: null,
     format: null,
-    image: null,
-    imageAlt: "Skagway shore excursion planning — White Pass Summit and Yukon Suspension Bridge",
+    image: "/tours/white-pass-summit-yukon-suspension-bridge.webp",
+    imageAlt: "The Yukon Suspension Bridge spanning the rocky, forested Tutshi River canyon beside the South Klondike Highway in northern British Columbia",
     highlights: [
       "White Pass Railway ride",
       "Optional Yukon Suspension Bridge crossing",
@@ -248,8 +248,8 @@ export const tours: Tour[] = [
     priceFrom: 399,
     priceVerifiedOn: null,
     format: null,
-    image: null,
-    imageAlt: "Skagway shore excursion planning — full-day rail journey to Bennett and Carcross",
+    image: "/tours/bennett-scenic-journey.webp",
+    imageAlt: "Calm Lake Bennett reflecting the surrounding mountains, with a weathered wooden boat on the shore at historic Bennett, British Columbia",
     highlights: [
       "Train over White Pass toward Bennett and Carcross",
       "Stop at historic Bennett, BC",
@@ -292,8 +292,8 @@ export const tours: Tour[] = [
     priceFrom: 239,
     priceVerifiedOn: null,
     format: null,
-    image: null,
-    imageAlt: "Skagway shore excursion planning — summit views and sled dog experiences",
+    image: "/tours/summit-views-sled-dogs.webp",
+    imageAlt: "Two harnessed sled dogs at a glacier dog camp near Skagway, Alaska, with dog houses and tents on the snow behind",
     highlights: [
       "Summit viewpoint stops",
       "Sled dog camp visit with the mushers",

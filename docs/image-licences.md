@@ -55,6 +55,52 @@ Tours with no verified photo use the branded placeholder panel in `components/To
 | Modifications | Resized from 2896×1936 to 1600 px wide, converted to WebP (q74), metadata stripped. No crop. |
 | Caveats | The exact location isn't stated on the file page. The photographer's same-day photos are of Carcross and Bennett Lake, and the South Klondike Highway is the only road from Skagway into the Yukon, so this is very likely the Klondike Highway border sign the tour passes. The sign design and "Larger than Life" slogan belong to the Government of Yukon's tourism branding. A photo of a public roadside sign is fine, but don't imply endorsement. No people. |
 
+## 4. Yukon Suspension Bridge (White Pass Summit and Yukon Suspension Bridge tour)
+
+| | |
+|---|---|
+| File | `public/tours/white-pass-summit-yukon-suspension-bridge.webp` (1280×851, ~340 KB) |
+| Used on | White Pass Summit and Yukon Suspension Bridge tour card (homepage, `/excursions/`, category pages listing it) and tour page (`lib/tours.ts`) |
+| Title | Yukon Suspension Bridge; 2012 |
+| Source | https://commons.wikimedia.org/wiki/File:Yukon_Suspension_Bridge;_2012.jpg |
+| Original | https://www.flickr.com/photos/volvob12b/13946691529/ (taken 4 Sept 2012) |
+| Author | Bernard Spragg. NZ |
+| Licence | CC0 1.0 (public domain dedication) — https://creativecommons.org/publicdomain/zero/1.0/ |
+| Licence verification | Commons FlickreviewR **passed** (2017-03-05, cc-zero) |
+| Attribution required | **No.** Not listed in the About page credits. |
+| Modifications | Resized from 2400×1595 to 1280 px wide, converted to WebP (q68), metadata stripped. No crop. |
+| Caveats | Shows the bridge itself over the Tutshi River canyon, at mile 46.5 on the South Klondike Highway in BC (location confirmed on the file page). Two or three visitors are tiny background figures. The bridge is a privately run attraction, so don't imply a partnership. |
+
+## 5. Lake Bennett (Bennett Scenic Journey tour)
+
+| | |
+|---|---|
+| File | `public/tours/bennett-scenic-journey.webp` (1600×1200, ~120 KB) |
+| Used on | Bennett Scenic Journey tour card (homepage, `/excursions/`, category pages listing it) and tour page (`lib/tours.ts`) |
+| Title | Lake Bennett |
+| Source | https://commons.wikimedia.org/wiki/File:Lake_Bennett_(3c19a182-1dd8-b71b-0bb2-a1d32e8b0c44).jpg |
+| Original | NPGallery asset 3C19A182-1DD8-B71B-0BB2A1D32E8B0C44 — https://npgallery.nps.gov/AssetDetail/3c19a182-1dd8-b71b-0bb2-a1d32e8b0c44 (taken 8 Aug 2012) |
+| Author | U.S. National Park Service (Klondike Gold Rush NHP), credited "NPS photo" |
+| Licence | Public domain (work of the US federal government) |
+| Licence verification | The NPGallery record gives photo credit "NPS photo", constraints "Public domain", and leaves the copyright field blank, so it isn't a contributed or copyrighted photo. Commons tag: PD-USGov-NPS. |
+| Attribution required | **No.** Not listed in the About page credits ("NPS photo" may be added as a courtesy). |
+| Modifications | Resized from 2048×1536 to 1600 px wide, converted to WebP (q74), metadata stripped. No crop. |
+| Caveats | Lake Bennett seen from the historic Bennett townsite (NPS album "Bennett area"). No people. Don't imply NPS endorsement. |
+
+## 6. Sled dogs on a glacier near Skagway (Summit Views and Sled Dogs tour)
+
+| | |
+|---|---|
+| File | `public/tours/summit-views-sled-dogs.webp` (1600×1200, ~85 KB) |
+| Used on | Summit Views and Sled Dogs tour card (homepage, `/excursions/`, category pages listing it) and tour page (`lib/tours.ts`) |
+| Title | Sled dogs |
+| Source / original | https://www.flickr.com/photos/74105777@N00/13592828 (taken 11 May 2005). Flickr description: "Two of the dogs pulling our sled on top of a glacier near Skagway, Alaska." |
+| Author | Jeremy Keith (Flickr: adactio) |
+| Licence | CC BY 2.0 — https://creativecommons.org/licenses/by/2.0/ (shown on the Flickr page, checked 10 Oct 2026) |
+| Attribution required | **Yes.** Displayed text: *"Sled dogs" by Jeremy Keith, licensed under CC BY 2.0; resized and converted to WebP.* |
+| Modifications | Original 1600×1200 kept at full size, converted to WebP (q74), metadata stripped. No crop. |
+| Caveats | **Authenticity:** this is a Skagway-area glacier dog camp in early summer, not the summer **wheeled-cart** camp across the border that this tour usually visits. It shows the same kind of working sled dogs, but not the tour's exact setting, so the owner should approve it. No visible operator branding. People are tiny background figures. Not on Commons, so there's no Commons licence review; the uploader is the photographer (first-person description). |
+
 ## Removed images (must not ship)
 
 Removed from `public/` on 9 October 2026 because their origin and rights couldn't be verified

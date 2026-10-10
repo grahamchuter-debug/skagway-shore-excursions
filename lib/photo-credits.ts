@@ -47,4 +47,15 @@ export const photoCredits: PhotoCredit[] = [
     licenceUrl: "https://creativecommons.org/licenses/by/2.0/",
     changes: "resized and converted to WebP",
   },
+  {
+    file: "/tours/summit-views-sled-dogs.webp",
+    usedOn: "Summit Views and Sled Dogs",
+    title: "Sled dogs",
+    sourceUrl: "https://www.flickr.com/photos/74105777@N00/13592828",
+    author: "Jeremy Keith",
+    authorUrl: "https://www.flickr.com/people/74105777@N00",
+    licence: "CC BY 2.0",
+    licenceUrl: "https://creativecommons.org/licenses/by/2.0/",
+    changes: "resized and converted to WebP",
+  },
 ];
